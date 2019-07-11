@@ -4,7 +4,6 @@ import data.Administrador;
 import data.Equipo;
 import data.Estudiante;
 import data.Laboratorista;
-import data.Profesor;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -22,7 +21,6 @@ public class TestAlmacen {
         Administrador administrador = new Administrador("Milena", "Diaz", "1122", "MileD");
         Laboratorista laboratorista = new Laboratorista("Juan", "Montenegro", "2233", "MonteB");
         Estudiante estudiante = new Estudiante("Eduardo", "Toro", "3344", "Edu23", "Ing. Electronica", "2", true, null, false);
-        Profesor profesor = new Profesor("Gabriel", "Tovar", "4455", "TovaG");
         Equipo equipo= new Equipo("Multimetro", "Flux", "1010","Bueno"); 
         ArrayList<Laboratorista> laboratoristas= new ArrayList<>(); 
         ArrayList<Estudiante> estudiantes= new ArrayList<>();
@@ -88,7 +86,9 @@ public class TestAlmacen {
          long numeroLineas = 0;
     	 try{
              //Ojo aqui se debe poner la ubicacuión del archivo:
-    		 	FileReader fr = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt");
+             //C:\Users\Stiven\Desktop
+             //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
+    		 	FileReader fr = new FileReader("C:\\Users\\Stiven\\Desktop\\Datos.txt");
     	 		BufferedReader bf = new BufferedReader(fr);
     	 		
     	 		 
@@ -115,7 +115,7 @@ public class TestAlmacen {
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
             //Ojo aqui se debe poner la ubicacuión del archivo:
-            archivo = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt");
+            archivo = new File ("C:\\Users\\Stiven\\Desktop\\Datos.txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
 
@@ -170,7 +170,9 @@ public class TestAlmacen {
          for(int i=0;i<numeroLineas/4;i++) {
         	 int masa=equipos.get(i).getEquipo().length();
              System.out.print("|"+(i+1)+". ");
-            if((i+1)>=10){System.out.print(" ");}
+            if((i+1)>=10){System.
+                    
+                    out.print(" ");}
             else{System.out.print("  ");}
             System.out.print("|"+equipos.get(i).getEquipo());
             for (int k = 0; k < (30-masa); k++) {
@@ -190,15 +192,148 @@ public class TestAlmacen {
              
          
         //fin de mostrar equipos
-       
         //**********************************************************************
+            
+            
+        //En esta parte instancio todos los laboratoristas para después crearlos y leerlos
+    	 Laboratorista laboratorista1=new Laboratorista(null,null,null,null);
+    	 Laboratorista laboratorista2=new Laboratorista(null,null,null,null);
+    	 Laboratorista laboratorista3=new Laboratorista(null,null,null,null);
+    	 Laboratorista laboratorista4=new Laboratorista(null,null,null,null);
+         Laboratorista laboratorista5=new Laboratorista(null,null,null,null);
+    	
+    	 laboratoristas.add(laboratorista1);
+    	 laboratoristas.add(laboratorista2);
+    	 laboratoristas.add(laboratorista3);
+    	 laboratoristas.add(laboratorista4);
+    	 laboratoristas.add(laboratorista5);
+    	
+         //Aqui termina la instanciación de los laboratoristas
+         
+         //contador para uso de txt de laboratoristas
+         int contador2=0,contador3=0;
+         
+         
+        //**************LABORATORISTAS  , leer txt**************************
+         
+         //Contar lineas
+         long numeroLineas1 = 0;
+    	 try{
+             //Ojo aqui se debe poner la ubicacuión del archivo:
+             //C:\Users\Stiven\Desktop
+             //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
+    		 	FileReader fr1 = new FileReader("C:\\Users\\Stiven\\Desktop\\Laboratoristas.txt");
+    	 		BufferedReader bf1 = new BufferedReader(fr1);
+    	 		
+    	 		 
+    	 		String cadena1;
+				while ((cadena1 = bf1.readLine())!=null) {
+    	 		  numeroLineas1++;
+    	 		}
+    		} catch (FileNotFoundException fnfe){
+    		  fnfe.printStackTrace();
+    		} catch (IOException ioe){
+    		  ioe.printStackTrace();
+    		}
+    	 System.out.println("El fichero tiene " + numeroLineas1 + " lineas");
+    	 
+         //Fin contar lineas
+         
+         
+         	
+    	 File archivo1 = null;
+         FileReader fr1 = null;
+         BufferedReader br1 = null;
+
+         try {
+            // Apertura del fichero y creacion de BufferedReader para poder
+            // hacer una lectura comoda (disponer del metodo readLine()).
+            //Ojo aqui se debe poner la ubicacuión del archivo:
+            archivo = new File ("C:\\Users\\Stiven\\Desktop\\Laboratoristas.txt");
+            fr = new FileReader (archivo);
+            br = new BufferedReader(fr);
+
+            // Lectura del fichero
+            String linea1;
+            
+            ArrayList<String> guardador1=new ArrayList<>();
+        
+            while((linea1=br.readLine())!=null) {
+            	contador3++;
+            	guardador1.add(linea1);
+            	
+            	if(contador3==4) {
+            		
+                	
+                	
+                	laboratoristas.get(contador2).setNombre(guardador1.get(0));
+                	laboratoristas.get(contador2).setApellido(guardador1.get(1));
+                	laboratoristas.get(contador2).setDocumento(guardador1.get(2));
+                        laboratoristas.get(contador2).setClave(guardador1.get(3));
+                       
+                	guardador1.clear();
+                	contador2++;
+                	contador3=0;
+                	}
+            	
+            }
+            
+        	
+         }
+         catch(Exception e){
+            e.printStackTrace();
+         }finally{
+            // En el finally cerramos el fichero, para asegurarnos
+            // que se cierra tanto si todo va bien como si salta 
+            // una excepcion.
+            try{                    
+               if( null != fr1 ){   
+                  fr1.close();     
+               }                  
+            }catch (Exception e2){ 
+               e2.printStackTrace();
+            }
+         }
+         
+         
+        //**************FIN LABORATORISTAS, leer txt**********************
+        //mostrar laboratoristas
+         
+         
+         System.out.println("-------------------------------------------------------------------------------------");
+         System.out.println("      |Nombre                        |Apellido       |Documento      |Clave       | ");
+         for(int i=0;i<numeroLineas1/4;i++) {
+        	 int masa=laboratoristas.get(i).getNombre().length();
+             System.out.print("|"+(i+1)+". ");
+            if((i+1)>=10){System.out.print(" ");}
+            else{System.out.print("  ");}
+            System.out.print("|"+laboratoristas.get(i).getNombre());
+            for (int k = 0; k < (30-masa); k++) {
+				System.out.print(" ");
+			}
+            System.out.print("|"+laboratoristas.get(i).getApellido());
+            for (int k = 0; k < (15-laboratoristas.get(i).getApellido().length()); k++) {
+				System.out.print(" ");
+			}
+            System.out.print("|"+laboratoristas.get(i).getDocumento());
+            for (int k = 0; k < (15-laboratoristas.get(i).getDocumento().length()); k++) {
+				System.out.print(" ");
+			}
+            System.out.println("|    "+laboratoristas.get(i).getClave()+"    |");
+             }
+            System.out.println("");
+             
+         
+        //fin de mostrar laboratoristas
+        //**********************************************************************
+            
+            
         while (x == 0) {
             System.out.println("\t\tAlmacen De Equipos\n\t     Electricos Y Electronicos\n\n");
             System.out.println("1. Administrador");
             System.out.println("2. Laboratorista");
             System.out.println("3. Estudiante");
-            System.out.println("4. Profesor");
-            System.out.println("5. Salir");
+            System.out.println("4. Salir");
             String menu = leer.nextLine();
             switch (menu) {
                 //**************************************************************
@@ -250,7 +385,58 @@ public class TestAlmacen {
                                     System.out.println("Contraseña: ");
                                     String clave = leer.nextLine();
                                     Laboratorista laboratoristax= new Laboratorista(nombre, apellido, documento, clave); 
-                                    Administrador.crearLaboratorista(laboratoristas, laboratoristax);
+                                    
+                                    //Administrador.crearLaboratorista(laboratoristas, laboratoristax);
+                                    
+                                    //aqui se escriben los laboratoristas en el txt
+                                    
+                                    int cantidadLaboratoristas=(int) (numeroLineas/4);
+                                    equipos.get(cantidadLaboratoristas+1).setEquipo(laboratoristax.getNombre());
+                                    equipos.get(cantidadLaboratoristas+1).setMarca(laboratoristax.getApellido());
+                                    equipos.get(cantidadLaboratoristas+1).setCodigo(laboratoristax.getDocumento());
+                                    equipos.get(cantidadLaboratoristas+1).setCodigo(laboratoristax.getClave());
+                                    
+                                    BufferedWriter bw1 = null;
+                                    FileWriter fw1 = null;
+
+                                     try {
+
+                                      
+                                        File file1 = new File("C:\\Users\\Stiven\\Desktop\\Laboratoristas.txt");
+                                         // Si el archivo no existe, se crea!
+                                         if (!file1.exists()) {
+                                             file1.createNewFile();
+                                         }
+                                         // flag true, indica adjuntar información al archivo.
+                                         fw1 = new FileWriter(file1.getAbsoluteFile(), true);
+                                         bw1 = new BufferedWriter(fw1);
+
+                                         bw1.write(laboratoristax.getNombre());
+                                         bw1.newLine();
+                                         bw1.write(laboratoristax.getApellido());
+                                         bw1.newLine();
+                                         bw1.write(laboratoristax.getDocumento());
+                                         bw1.newLine();
+                                         bw1.write(laboratoristax.getClave());
+                                         bw1.newLine();
+                                         System.out.println("información agregada!");
+                                     } catch (IOException e) {
+                                         e.printStackTrace();
+                                     } finally {
+                                         try {
+                                                         //Cierra instancias de FileWriter y BufferedWriter
+                                             if (bw1 != null)
+                                                 bw1.close();
+                                             if (fw1 != null)
+                                                 fw1.close();
+                                         } catch (IOException ex) {
+                                             ex.printStackTrace();
+                                         }
+                                     }
+          
+                                    
+                                    //fin de escribir laboratoristas
+                         
                                     System.out.println("\nDesea Regresar: ");
                                     System.out.println("1. Si");
                                     System.out.println("2. No");
@@ -342,8 +528,8 @@ public class TestAlmacen {
 
                                      try {
 
-                                      
-                                        File file = new File("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt");
+                                      //ojo cambiar
+                                        File file = new File("C:\\Users\\Stiven\\Desktop\\Laboratoristas.txt");
                                          // Si el archivo no existe, se crea!
                                          if (!file.exists()) {
                                              file.createNewFile();
@@ -550,30 +736,6 @@ public class TestAlmacen {
                     break;
                 //**************************************************************
                 case "4":
-                    while (y == 0) {
-                        System.out.println("\tPROFESOR");
-                        System.out.println("Usuario: ");
-                        usuario = leer.nextLine();
-                        if (usuario.equals(profesor.getNombre())) {
-                            while (y == 0) {
-                                System.out.println("Contraseña:");
-                                contraseña = leer.nextLine();
-                                if (contraseña.equals(profesor.getClave())) {
-                                    //Inicio Sesion
-                                    y = 1;
-                                } else {
-                                    System.out.println("Contraseña Incorrecta, Intentelo Nuevamente");
-                                    y = 0;
-                                }
-                            }
-                        } else {
-                            System.out.println("Usuario Incorrecto, Intentelo Nuevamente");
-                            y = 0;
-                        }
-                    }
-                    break;
-                //**************************************************************
-                case "5":
                     x = 1;
                     break;
             }
