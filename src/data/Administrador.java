@@ -78,7 +78,7 @@ public class Administrador extends Persona {
 			System.out.print( ", Apellido: " + estudiantes.get(i).getApellido()+"  ");
 			System.out.print( ", Documento: " + estudiantes.get(i).getDocumento()+"  ");
                         System.out.print( ", Carrera: " + estudiantes.get(i).getCarrera()+"  ");
-                        System.out.print( ", Semestre: " + estudiantes.get(i).getSemestre()+"  ");
+                        System.out.print( ", Semestre: " + estudiantes.get(i).getSemestre()+"  \n");
 		}
     }
     
@@ -88,7 +88,7 @@ public class Administrador extends Persona {
 			System.out.print((i+1)+". ");
 			System.out.print("Nombre: " + laboratoristas.get(i).getNombre()+"  ");
 			System.out.print( ", Apellido: " + laboratoristas.get(i).getApellido()+"  ");
-			System.out.print( ", Documento: " + laboratoristas.get(i).getDocumento()+"  ");
+			System.out.print( ", Documento: " + laboratoristas.get(i).getDocumento()+"  \n");
 		}
     }
     

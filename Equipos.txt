@@ -1,0 +1,41 @@
+
+Multimetro
+Fluke
+M01
+Bueno
+Osciloscopio
+Tektronic
+O01
+Bueno
+Generador de señales
+Rigol
+GS01
+Bueno
+Variac
+???
+V01
+Bueno
+Puente de impedancias
+???
+PI01
+Bueno
+Analizador de redes
+ABBA
+AR01
+Bueno
+Moto tool
+???
+Mo
+Bueno
+Computador
+Samgsumg
+01
+Bueno
+Martillo
+Steven
+01
+Bueno
+Sonda atenuada
+ABBA
+SA01
+Bueno
