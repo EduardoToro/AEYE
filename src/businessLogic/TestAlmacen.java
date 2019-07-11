@@ -6,9 +6,11 @@ import data.Estudiante;
 import data.Laboratorista;
 import data.Profesor;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -150,10 +152,13 @@ public class TestAlmacen {
          
          
          System.out.println("-------------------------------------------------------------------------------------");
-         System.out.println("    |Nombre                        |Marca          |Codigo|             |Estado   | ");
+         System.out.println("      |Nombre                        |Marca          |Codigo         |Estado       | ");
          for(int i=0;i<numeroLineas/4;i++) {
         	 int masa=equipos.get(i).getEquipo().length();
-             System.out.print("|"+(i+1)+". |"+equipos.get(i).getEquipo());
+             System.out.print("|"+(i+1)+". ");
+            if((i+1)>=10){System.out.print(" ");}
+            else{System.out.print("  ");}
+            System.out.print("|"+equipos.get(i).getEquipo());
             for (int k = 0; k < (30-masa); k++) {
 				System.out.print(" ");
 			}
@@ -161,11 +166,11 @@ public class TestAlmacen {
             for (int k = 0; k < (15-equipos.get(i).getMarca().length()); k++) {
 				System.out.print(" ");
 			}
-            System.out.print("|"+equipos.get(i).getCodigo()+"    |");
+            System.out.print("|"+equipos.get(i).getCodigo());
             for (int k = 0; k < (15-equipos.get(i).getCodigo().length()); k++) {
 				System.out.print(" ");
 			}
-            System.out.println("|"+equipos.get(i).getEstado()+"    |");
+            System.out.println("|    "+equipos.get(i).getEstado()+"    |");
              }
             System.out.println("");
              
@@ -312,7 +317,57 @@ public class TestAlmacen {
                                     System.out.println("Codigo: ");
                                     String codigo = leer.nextLine();
                                     Equipo equipox= new Equipo(nombreEquipo, marca, codigo,"Bueno"); 
-                                    Administrador.añadirEquipo(equipos, equipox);
+                                    //Administrador.añadirEquipo(equipos, equipox);
+                                    
+                                    //aqui se escriben los equipos en el txt
+                                    
+                                    int catidadEquipos=(int) (numeroLineas/4);
+                                    equipos.get(catidadEquipos+1).setEquipo(equipox.getEquipo());
+                                    equipos.get(catidadEquipos+1).setMarca(equipox.getMarca());
+                                    equipos.get(catidadEquipos+1).setCodigo(equipox.getCodigo());
+                                    equipos.get(catidadEquipos+1).setCodigo(equipox.getEstado());
+                                    
+                                    BufferedWriter bw = null;
+                                    FileWriter fw = null;
+
+                                     try {
+
+                                      
+                                        File file = new File("C:\\Users\\Stiven\\Desktop\\datos.txt");
+                                         // Si el archivo no existe, se crea!
+                                         if (!file.exists()) {
+                                             file.createNewFile();
+                                         }
+                                         // flag true, indica adjuntar información al archivo.
+                                         fw = new FileWriter(file.getAbsoluteFile(), true);
+                                         bw = new BufferedWriter(fw);
+
+                                         bw.write(equipox.getEquipo());
+                                         bw.newLine();
+                                         bw.write(equipox.getMarca());
+                                         bw.newLine();
+                                         bw.write(equipox.getCodigo());
+                                         bw.newLine();
+                                         bw.write(equipox.getEstado());
+                                         bw.newLine();
+                                         System.out.println("información agregada!");
+                                     } catch (IOException e) {
+                                         e.printStackTrace();
+                                     } finally {
+                                         try {
+                                                         //Cierra instancias de FileWriter y BufferedWriter
+                                             if (bw != null)
+                                                 bw.close();
+                                             if (fw != null)
+                                                 fw.close();
+                                         } catch (IOException ex) {
+                                             ex.printStackTrace();
+                                         }
+                                     }
+          
+                                    
+                                    //fin de escribir equipos
+                         
                                     System.out.println("\nDesea Regresar: ");
                                     System.out.println("1. Si");
                                     System.out.println("2. No");
