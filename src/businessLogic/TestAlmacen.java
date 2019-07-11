@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class TestAlmacen {
         
     public static void main(String[] args) {
-        System.out.println("hola");
         Administrador administrador = new Administrador("Milena", "Diaz", "1122", "MileD");
         Laboratorista laboratorista = new Laboratorista("Juan", "Montenegro", "2233", "MonteB");
         Estudiante estudiante = new Estudiante("Eduardo", "Toro", "3344", "Edu23", "Ing. Electronica", "2", true, null, false);
@@ -59,6 +58,7 @@ public class TestAlmacen {
                             System.out.println("Usuario Incorrecto, Intentelo Nuevamente");
                             y = 0;
                         }
+                    }
                         while(z==0){
                         System.out.println("\nFUNCIONES ADMINISTRADOR\n");
                             System.out.println("1. Crear Laboratorista");
@@ -68,7 +68,8 @@ public class TestAlmacen {
                             System.out.println("5. Añadir Equipo");
                             System.out.println("6. Lista Laboratoristas");
                             System.out.println("7. Lista Estudiantes");
-                            System.out.println("8. Regresar");
+                            System.out.println("8. Lista Equipos");
+                            System.out.println("9. Regresar");
                             String submenu1= leer.nextLine(); 
                             switch (submenu1) {
                                 case "1":
@@ -89,7 +90,7 @@ public class TestAlmacen {
                                     System.out.println("2. No");
                                     confirmar= leer.nextLine(); 
                                     if(confirmar.equals("1")){
-                                        y=0;
+                                        z=0;
                                     }else{y=1;}
                                     break;
                                     //******************************************
@@ -115,7 +116,7 @@ public class TestAlmacen {
                                     System.out.println("2. No");
                                     confirmar= leer.nextLine(); 
                                     if(confirmar.equals("1")){
-                                        y=0;
+                                        z=0;
                                     }else{y=1;}
                                     break;
                                     //******************************************
@@ -126,20 +127,27 @@ public class TestAlmacen {
                                     int confirmacion= Integer.parseInt(accion)-1; 
                                     Administrador.editarEstudiante(estudiantes.get(confirmacion));
                                     System.out.println("El estudiante ha sido editado exitosamente.");
+                                    System.out.println("\nDesea Regresar: ");
+                                    System.out.println("1. Si");
+                                    System.out.println("2. No");
+                                    confirmar= leer.nextLine(); 
+                                    if(confirmar.equals("1")){
+                                        z=0;
+                                    }else{y=1;}
                                     break; 
                                 case "4": 
                                     System.out.println("\nSeleccione el estudiante que desea eliminar: \n");
                                     Administrador.verEstudiantes(estudiantes);
                                     accion= leer.nextLine();
                                     int ejecutarAccion= Integer.parseInt(accion)-1; 
-                                    Administrador.eliminarCliente(estudiantes, ejecutarAccion);
+                                    Administrador.eliminarEstudiante(estudiantes, ejecutarAccion);
                                     System.out.println("\nEl estudiante ha sido eliminado correctamente");
                                     System.out.println("\nDesea Regresar: ");
                                     System.out.println("1. Si");
                                     System.out.println("2. No");
                                     confirmar= leer.nextLine(); 
                                     if(confirmar.equals("1")){
-                                        y=0;
+                                        z=0;
                                     }else{y=1;}
                                     break; 
                                 //**********************************************
@@ -159,7 +167,7 @@ public class TestAlmacen {
                                     System.out.println("2. No");
                                     confirmar= leer.nextLine(); 
                                     if(confirmar.equals("1")){
-                                        y=0;
+                                        z=0;
                                     }else{y=1;}
                                     break;
                                 //**********************************************
@@ -172,7 +180,7 @@ public class TestAlmacen {
                                     System.out.println("2. No");
                                     confirmar= leer.nextLine(); 
                                     if(confirmar.equals("1")){
-                                        y=0;
+                                        z=0;
                                     }else{y=1;}
                                     break; 
                                 //**********************************************
@@ -184,18 +192,29 @@ public class TestAlmacen {
                                     System.out.println("2. No");
                                     confirmar= leer.nextLine(); 
                                     if(confirmar.equals("1")){
-                                        y=0;
+                                        z=0;
                                     }else{y=1;}
                                     break; 
                                 //**********************************************
                                 case "8": 
-                                    System.out.println("A tu servicio :)");
+                                    Administrador.verEquipos(equipos);
+                                    System.out.println();
+                                    System.out.println("\nDesea Regresar: ");
+                                    System.out.println("1. Si");
+                                    System.out.println("2. No");
+                                    confirmar= leer.nextLine(); 
+                                    if(confirmar.equals("1")){
+                                        z=0;
+                                    }else{y=1;}
+                                //**********************************************
+                                case "9": 
+                                    System.out.println("\nA tu servicio :)\n");
                                     z=1;
                                     y=1; 
                                     break;      
                             }
                           } 
-                        }
+                        
                     break;
                 //**************************************************************
                 case "2":
@@ -208,8 +227,8 @@ public class TestAlmacen {
                                 System.out.println("Contraseña:");
                                 contraseña = leer.nextLine();
                                 if (contraseña.equals(laboratorista.getClave())) {
-                                    //Inicio Seseion
-                                    y = 1;
+                                    //Inicio Sesion
+                                    y=1; 
                                 } else {
                                     System.out.println("Contraseña Incorrecta, Intentelo Nuevamente");
                                     y = 0;
@@ -219,7 +238,75 @@ public class TestAlmacen {
                             System.out.println("Usuario Incorrecto, Intentelo Nuevamente");
                             y = 0;
                         }
-                    }
+                    } 
+                        while(z==0){
+                        System.out.println("\nFUNCIONES LABORATORISTA\n");
+                        System.out.println("1. Lista Equipos");
+                        System.out.println("2. Prestar Equipo");
+                        System.out.println("3. Recibir Equipo");
+                        System.out.println("4. Editar Equipo");
+                        System.out.println("5. Eliminar Equipo");
+                        System.out.println("6. Regresar");
+                        String submenu2= leer.nextLine(); 
+                        switch(submenu2){
+                            //**************************************************
+                            case "1": 
+                                Administrador.verEquipos(equipos);
+                                System.out.println();
+                                    System.out.println("\nDesea Regresar: ");
+                                    System.out.println("1. Si");
+                                    System.out.println("2. No");
+                                    confirmar= leer.nextLine(); 
+                                    if(confirmar.equals("1")){
+                                        z=0;
+                                    }else{y=1;}
+                                break;
+                            //**************************************************   
+                            case "2":
+                               
+                                break; 
+                            case "3": 
+                                break; 
+                            case "4":
+                                 System.out.println("\nSeleccione el equipo que desea editar: \n");
+                                    Administrador.verEquipos(equipos);
+                                    accion= leer.nextLine(); 
+                                    int confirmacion= Integer.parseInt(accion)-1; 
+                                    Laboratorista.editarEquipo(equipos.get(confirmacion));
+                                    System.out.println("El equipo ha sido editado exitosamente.");
+                                    System.out.println("\nDesea Regresar: ");
+                                    System.out.println("1. Si");
+                                    System.out.println("2. No");
+                                    confirmar= leer.nextLine(); 
+                                    if(confirmar.equals("1")){
+                                        z=0;
+                                    }else{y=1;}
+                                break; 
+                            case "5": 
+                                System.out.println("\nSeleccione el equipo que desea eliminar: \n");
+                                    Administrador.verEquipos(equipos);
+                                    accion= leer.nextLine();
+                                    int ejecutarAccion= Integer.parseInt(accion)-1; 
+                                    Laboratorista.eliminarEquipo(equipos, ejecutarAccion);
+                                    System.out.println("\nEl equipo ha sido eliminado correctamente");
+                                    System.out.println("\nDesea Regresar: ");
+                                    System.out.println("1. Si");
+                                    System.out.println("2. No");
+                                    confirmar= leer.nextLine(); 
+                                    if(confirmar.equals("1")){
+                                        z=0;
+                                    }else{y=1;}
+                                break; 
+                            case "6": 
+                                 System.out.println("\nA tu servicio :)\n");
+                                    z=1;
+                                    y=1; 
+                                break; 
+                            
+                         
+                        }
+                      } 
+                   
                     break;
                 //**************************************************************
                 case "3":
@@ -274,7 +361,6 @@ public class TestAlmacen {
                     x = 1;
                     break;
             }
-
         }
     }
 }

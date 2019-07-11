@@ -12,7 +12,7 @@ public class Administrador extends Persona {
         super(nombre, apellido, documento, clave);
     }
     
-    public static void eliminarCliente(ArrayList<Estudiante> estudiantes, int ejecutarAccion){
+    public static void eliminarEstudiante(ArrayList<Estudiante> estudiantes, int ejecutarAccion){
         estudiantes.remove(ejecutarAccion); 
     }
     public static ArrayList<Laboratorista> crearLaboratorista(ArrayList<Laboratorista> laboratoristas, Laboratorista laboratoristax){
@@ -92,5 +92,14 @@ public class Administrador extends Persona {
 		}
     }
     
+    public static void verEquipos(ArrayList<Equipo> equipos){
+        
+        for(int i=0;i<equipos.size();i++) {
+			System.out.print((i+1)+". ");
+			System.out.print("Equipo: " + equipos.get(i).getEquipo()+"  ");
+			System.out.print( ", Marca: " + equipos.get(i).getMarca()+"  ");
+			System.out.print( ", Codigo: " + equipos.get(i).getCodigo()+"  ");
+		}
+    }
     
 }
