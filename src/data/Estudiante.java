@@ -3,23 +3,41 @@ package data;
 import java.util.ArrayList;
 
 public class Estudiante extends Persona{
-    
     ArrayList<Equipo> listaEquipos= new ArrayList<>(); 
     private String carrera;
     private String semestre; 
-    private boolean autorizacion; 
-    private String numeroGrupo; 
-    private boolean sancion; 
-
-    public void hacerReserva(){}
+    private boolean sancion;  
     
     
-    public Estudiante(String nombre, String apellido, String documento, String clave,String carrera, String semestre, boolean autorizacion, String numeroGrupo, boolean sancion) {
+     public static Equipo prestarEquipos(Equipo equipox){
+		
+		String equipoN="0";
+		if(!equipoN.equals("0")) {
+			equipox.setEquipo(equipoN);
+		}
+		String marcaN="0";
+		if(!marcaN.equals("0")) {
+			equipox.setMarca(marcaN);
+		}
+		String codigoN="0";
+		if(!codigoN.equals("0")) {
+			equipox.setCodigo(codigoN);      
+		}
+		String estadoN="0";
+		if(!estadoN.equals("0")) {
+			equipox.setEstado(estadoN);        
+		}
+                String disposicionN="Prestado";
+                if(!disposicionN.equals("0")) {
+			equipox.setDisposicion(disposicionN);        
+		}
+		return equipox;
+    }
+    
+    public Estudiante(String nombre, String apellido, String documento, String clave,String carrera, String semestre, boolean sancion) {
         super(nombre, apellido, documento, clave);
         this.carrera = carrera;
         this.semestre = semestre;
-        this.autorizacion = autorizacion;
-        this.numeroGrupo = numeroGrupo;
         this.sancion = sancion;
     }
 
@@ -44,22 +62,6 @@ public class Estudiante extends Persona{
 
     public void setSemestre(String semestre) {
         this.semestre = semestre;
-    }
-
-    public boolean isAutorizacion() {
-        return autorizacion;
-    }
-
-    public void setAutorizacion(boolean autorizacion) {
-        this.autorizacion = autorizacion;
-    }
-
-    public String getNumeroGrupo() {
-        return numeroGrupo;
-    }
-
-    public void setNumeroGrupo(String numeroGrupo) {
-        this.numeroGrupo = numeroGrupo;
     }
 
     public boolean isSancion() {

@@ -5,14 +5,24 @@ public class Equipo {
     private String codigo; 
     private String marca; 
     private String estado;
+    private String disposicion; 
 
-        public Equipo(String equipo,String marca, String codigo,String estado) {
+        public Equipo(String equipo,String marca, String codigo,String estado, String disposicion) {
         this.equipo = equipo;
         this.codigo = codigo;
         this.marca = marca;
         this.estado=estado;
+        this.disposicion= disposicion; 
     }
-        
+
+    public String getDisposicion() {
+        return disposicion;
+    }
+
+    public void setDisposicion(String disposicion) {
+        this.disposicion = disposicion;
+    }
+       
     public String getEquipo() {
         return equipo;
     }

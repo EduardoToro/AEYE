@@ -18,12 +18,11 @@ import java.util.Scanner;
 public class TestAlmacen {
         
     public static void main(String[] args) {
-        System.out.println("Hoal Juan no me funiona");
         Administrador administrador = new Administrador("Milena", "Diaz", "1122", "MileD");
         Laboratorista laboratorista = new Laboratorista("Juan", "Montenegro", "2233", "MonteB");
-        Estudiante estudiante = new Estudiante("Eduardo", "Toro", "3344", "Edu23", "Ing. Electronica", "2", true, null, false);
+        Estudiante estudiante = new Estudiante("Eduardo", "Toro", "3344", "Edu23", "Ing. Electronica", "2",false);
         Profesor profesor = new Profesor("Gabriel", "Tovar", "4455", "TovaG");
-        Equipo equipo= new Equipo("Multimetro", "Flux", "1010","Bueno"); 
+        Equipo equipo= new Equipo("Multimetro", "Flux", "1010","Bueno", "Disponible"); 
         ArrayList<Laboratorista> laboratoristas= new ArrayList<>(); 
         ArrayList<Estudiante> estudiantes= new ArrayList<>();
     	ArrayList<Equipo> equipos=new ArrayList<>(20);
@@ -36,26 +35,26 @@ public class TestAlmacen {
         
         
         //En esta parte instancio todos los equipos para después crearlos y leerlos
-    	 Equipo equipo1=new Equipo(null,null,null,null);
-    	 Equipo equipo2=new Equipo(null,null,null,null);
-    	 Equipo equipo3=new Equipo(null,null,null,null);
-    	 Equipo equipo4=new Equipo(null,null,null,null);
-    	 Equipo equipo5=new Equipo(null,null,null,null);
-    	 Equipo equipo6=new Equipo(null,null,null,null);
-    	 Equipo equipo7=new Equipo(null,null,null,null);
-    	 Equipo equipo8=new Equipo(null,null,null,null);
-    	 Equipo equipo9=new Equipo(null,null,null,null);
-    	 Equipo equipo10=new Equipo(null,null,null,null);
-    	 Equipo equipo11=new Equipo(null,null,null,null);
-    	 Equipo equipo12=new Equipo(null,null,null,null);
-    	 Equipo equipo13=new Equipo(null,null,null,null);
-    	 Equipo equipo14=new Equipo(null,null,null,null);
-    	 Equipo equipo15=new Equipo(null,null,null,null);
-    	 Equipo equipo16=new Equipo(null,null,null,null);
-    	 Equipo equipo17=new Equipo(null,null,null,null);
-    	 Equipo equipo18=new Equipo(null,null,null,null);
-    	 Equipo equipo19=new Equipo(null,null,null,null);
-    	 Equipo equipo20=new Equipo(null,null,null,null);
+    	 Equipo equipo1=new Equipo(null,null,null,null, null);
+    	 Equipo equipo2=new Equipo(null,null,null,null, null);
+    	 Equipo equipo3=new Equipo(null,null,null,null, null);
+    	 Equipo equipo4=new Equipo(null,null,null,null, null);
+    	 Equipo equipo5=new Equipo(null,null,null,null, null);
+    	 Equipo equipo6=new Equipo(null,null,null,null, null);
+    	 Equipo equipo7=new Equipo(null,null,null,null,  null);
+    	 Equipo equipo8=new Equipo(null,null,null,null, null);
+    	 Equipo equipo9=new Equipo(null,null,null,null, null);
+    	 Equipo equipo10=new Equipo(null,null,null,null, null);
+    	 Equipo equipo11=new Equipo(null,null,null,null, null);
+    	 Equipo equipo12=new Equipo(null,null,null,null, null);
+    	 Equipo equipo13=new Equipo(null,null,null,null, null);
+    	 Equipo equipo14=new Equipo(null,null,null,null, null);
+    	 Equipo equipo15=new Equipo(null,null,null,null, null);
+    	 Equipo equipo16=new Equipo(null,null,null,null, null);
+    	 Equipo equipo17=new Equipo(null,null,null,null, null);
+    	 Equipo equipo18=new Equipo(null,null,null,null, null);
+    	 Equipo equipo19=new Equipo(null,null,null,null, null);
+    	 Equipo equipo20=new Equipo(null,null,null,null, null);
     	 equipos.add(equipo1);
     	 equipos.add(equipo2);
     	 equipos.add(equipo3);
@@ -166,7 +165,7 @@ public class TestAlmacen {
          
          
          System.out.println("-------------------------------------------------------------------------------------");
-         System.out.println("      |Nombre                        |Marca          |Codigo         |Estado       | ");
+         System.out.println("      |Equipo                        |Marca          |Codigo         |Estado       | ");
          for(int i=0;i<numeroLineas/4;i++) {
         	 int masa=equipos.get(i).getEquipo().length();
              System.out.print("|"+(i+1)+". ");
@@ -326,7 +325,7 @@ public class TestAlmacen {
                                     String marca = leer.nextLine();
                                     System.out.println("Codigo: ");
                                     String codigo = leer.nextLine();
-                                    Equipo equipox= new Equipo(nombreEquipo, marca, codigo,"Bueno"); 
+                                    Equipo equipox= new Equipo(nombreEquipo, marca, codigo,"Bueno", "Disponible"); 
                                     //Administrador.añadirEquipo(equipos, equipox);
                                     
                                     //aqui se escriben los equipos en el txt
@@ -335,7 +334,7 @@ public class TestAlmacen {
                                     equipos.get(catidadEquipos+1).setEquipo(equipox.getEquipo());
                                     equipos.get(catidadEquipos+1).setMarca(equipox.getMarca());
                                     equipos.get(catidadEquipos+1).setCodigo(equipox.getCodigo());
-                                    equipos.get(catidadEquipos+1).setCodigo(equipox.getEstado());
+                                    equipos.get(catidadEquipos+1).setEstado(equipox.getEstado());
                                     
                                     BufferedWriter bw = null;
                                     FileWriter fw = null;
@@ -458,11 +457,10 @@ public class TestAlmacen {
                         while(z==0){
                         System.out.println("\nFUNCIONES LABORATORISTA\n");
                         System.out.println("1. Lista Equipos");
-                        System.out.println("2. Prestar Equipo");
-                        System.out.println("3. Recibir Equipo");
-                        System.out.println("4. Editar Equipo");
-                        System.out.println("5. Eliminar Equipo");
-                        System.out.println("6. Regresar");
+                        System.out.println("2. Recibir Equipo");
+                        System.out.println("3. Editar Equipo");
+                        System.out.println("4. Eliminar Equipo");
+                        System.out.println("5. Regresar");
                         String submenu2= leer.nextLine(); 
                         switch(submenu2){
                             //**************************************************
@@ -478,12 +476,16 @@ public class TestAlmacen {
                                     }else{y=1;}
                                 break;
                             //**************************************************   
-                            case "2":
-                               
+                            case "2": 
+                                for(int i=0; i<equipos.size(); i++){
+                                    if(equipos.get(i).getDisposicion().equals("Prestado")){
+                                    equipos.get(i).setDisposicion("Disponible");
+                                }
+                            }
+                                System.out.println("\nEl equipo ha sido entregado.");
+                                
                                 break; 
-                            case "3": 
-                                break; 
-                            case "4":
+                            case "3":
                                  System.out.println("\nSeleccione el equipo que desea editar: \n");
                                     Administrador.verEquipos(equipos);
                                     accion= leer.nextLine(); 
@@ -498,12 +500,12 @@ public class TestAlmacen {
                                         z=0;
                                     }else{y=1;}
                                 break; 
-                            case "5": 
+                            case "4": 
                                 System.out.println("\nSeleccione el equipo que desea eliminar: \n");
                                     Administrador.verEquipos(equipos);
                                     accion= leer.nextLine();
-                                    int ejecutarAccion= Integer.parseInt(accion)-1; 
-                                    Laboratorista.eliminarEquipo(equipos, ejecutarAccion);
+                                    int ejeAccion= Integer.parseInt(accion); 
+                                    Laboratorista.eliminarEquipo(equipos, ejeAccion);
                                     System.out.println("\nEl equipo ha sido eliminado correctamente");
                                     System.out.println("\nDesea Regresar: ");
                                     System.out.println("1. Si");
@@ -513,7 +515,7 @@ public class TestAlmacen {
                                         z=0;
                                     }else{y=1;}
                                 break; 
-                            case "6": 
+                            case "5": 
                                  System.out.println("\nA tu servicio :)\n");
                                     z=1;
                                     y=1; 
@@ -546,6 +548,36 @@ public class TestAlmacen {
                             System.out.println("Usuario Incorrecto, Intentelo Nuevamente");
                             y = 0;
                         }
+                    }
+                    while(z==0){
+                    System.out.println("\nFUNCIONES ESTUDIANTE\n");
+                    System.out.println("1. Solicitar Equipos");
+                    System.out.println("2. Regresar");
+                    String submenu3= leer.nextLine(); 
+                    switch(submenu3){
+                        case "1":
+                            System.out.println("\nEquipo a prestar: ");
+                                Administrador.verEquipos(equipos);
+                                confirmar= leer.nextLine(); 
+                                int seleccion= Integer.parseInt(confirmar)-1;
+                                Estudiante.prestarEquipos(equipos.get(seleccion));
+                                System.out.println("El equipo ha sido prestado a: "
+                                        + estudiante.getNombre()+" "+estudiante.getApellido()+". Estudiante de: "+estudiante.getCarrera());
+                                System.out.println("\nDesea Regresar: ");
+                                    System.out.println("1. Si");
+                                    System.out.println("2. No");
+                                    confirmar= leer.nextLine(); 
+                                    if(confirmar.equals("1")){
+                                        z=0;
+                                    }else{y=1;}
+                            break; 
+                        case "2": 
+                            System.out.println("\nA tu servicio :)\n");
+                                    z=1;
+                                    y=1;
+                            break; 
+   
+                    }
                     }
                     break;
                 //**************************************************************

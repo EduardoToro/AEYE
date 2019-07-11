@@ -6,11 +6,32 @@ import java.util.Scanner;
 public class Laboratorista extends Persona{
     
     ArrayList<Estudiante> reserva= new ArrayList<>(); 
-    private String horario; 
+    private String horario;
     
-    public void prestarEquipos(){}
-    
-    public void recibirEquipos(){}
+     public static Equipo recibirEquipos(Equipo equipox){
+		
+		String equipoN="0";
+		if(!equipoN.equals("0")) {
+			equipox.setEquipo(equipoN);
+		}
+		String marcaN="0";
+		if(!marcaN.equals("0")) {
+			equipox.setMarca(marcaN);
+		}
+		String codigoN="0";
+		if(!codigoN.equals("0")) {
+			equipox.setCodigo(codigoN);      
+		}
+		String estadoN="0";
+		if(!estadoN.equals("0")) {
+			equipox.setEstado(estadoN);        
+		}
+                String disposicionN="Disponible";
+                if(!disposicionN.equals("0")) {
+			equipox.setDisposicion(disposicionN);        
+		}
+		return equipox;
+    }
     
     public static Equipo editarEquipo( Equipo equipox){
         
@@ -31,7 +52,12 @@ public class Laboratorista extends Persona{
 		System.out.println("\nNuevo Codigo: ");
 		String codigoN=entrada.nextLine();
 		if(!codigoN.equals("0")) {
-			equipox.setCodigo(codigoN);
+			equipox.setCodigo(codigoN);      
+		}
+                System.out.println("\nNuevo Estado: ");
+		String estadoN=entrada.nextLine();
+		if(!estadoN.equals("0")) {
+			equipox.setEstado(estadoN);        
 		}		
 		return equipox;
     }
@@ -52,5 +78,5 @@ public class Laboratorista extends Persona{
         this.horario = horario;
     }
     
-    
+   
 }
