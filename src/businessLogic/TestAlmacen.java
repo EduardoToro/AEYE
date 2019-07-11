@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TestAlmacen {
-
+        
     public static void main(String[] args) {
-        System.out.println("Hola Juan El hombre!");
+        System.out.println("hola");
         Administrador administrador = new Administrador("Milena", "Diaz", "1122", "MileD");
         Laboratorista laboratorista = new Laboratorista("Juan", "Montenegro", "2233", "MonteB");
         Estudiante estudiante = new Estudiante("Eduardo", "Toro", "3344", "Edu23", "Ing. Electronica", "2", true, null, false);
