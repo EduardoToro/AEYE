@@ -5,7 +5,7 @@ public class Equipo {
     private String codigo; 
     private String marca; 
 
-    public Equipo(String equipo, String codigo, String marca) {
+        public Equipo(String equipo,String marca, String codigo) {
         this.equipo = equipo;
         this.codigo = codigo;
         this.marca = marca;

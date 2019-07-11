@@ -13,6 +13,7 @@ public class Estudiante extends Persona{
 
     public void hacerReserva(){}
     
+    
     public Estudiante(String nombre, String apellido, String documento, String clave,String carrera, String semestre, boolean autorizacion, String numeroGrupo, boolean sancion) {
         super(nombre, apellido, documento, clave);
         this.carrera = carrera;
@@ -21,6 +22,13 @@ public class Estudiante extends Persona{
         this.numeroGrupo = numeroGrupo;
         this.sancion = sancion;
     }
+
+     public Estudiante(String nombre, String apellido, String documento, String clave, String carrera, String semestre) {
+        super(nombre, apellido, documento, clave);
+        this.carrera= carrera;
+        this.semestre= semestre;
+    }
+    
     
     public String getCarrera() {
         return carrera;
