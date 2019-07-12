@@ -128,7 +128,7 @@ public class TestAlmacen {
             	contador1++;
             	guardador.add(linea);
             	
-            	if(contador1==4) {
+            	if(contador1==5) {
             		
                 	
                 	
@@ -136,6 +136,7 @@ public class TestAlmacen {
                 	equipos.get(contador0).setMarca(guardador.get(1));
                 	equipos.get(contador0).setCodigo(guardador.get(2));
                         equipos.get(contador0).setEstado(guardador.get(3));
+                        equipos.get(contador0).setDisposicion(guardador.get(4));
                 	guardador.clear();
                 	contador0++;
                 	contador1=0;
@@ -166,8 +167,9 @@ public class TestAlmacen {
          
          
          System.out.println("-------------------------------------------------------------------------------------");
-         System.out.println("      |Equipo                        |Marca          |Codigo         |Estado       | ");
-         for(int i=0;i<numeroLineas/4;i++) {
+         System.out.println("      |Equipo                        |Marca          |Codigo         |   Estado    | "
+                 + "            Disposicion    |");
+         for(int i=0;i<numeroLineas/5;i++) {
         	 int masa=equipos.get(i).getEquipo().length();
              System.out.print("|"+(i+1)+". ");
             if((i+1)>=10){System.
@@ -186,7 +188,12 @@ public class TestAlmacen {
             for (int k = 0; k < (15-equipos.get(i).getCodigo().length()); k++) {
 				System.out.print(" ");
 			}
-            System.out.println("|    "+equipos.get(i).getEstado()+"    |");
+            System.out.print("|    "+equipos.get(i).getEstado()+"    |");
+            for (int k = 0; k < (15-equipos.get(i).getEstado().length()); k++) {
+				System.out.print(" ");
+			}
+            System.out.println("    "+equipos.get(i).getDisposicion()+"    |");
+            
              }
             System.out.println("");
              
