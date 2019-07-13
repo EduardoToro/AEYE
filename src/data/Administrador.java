@@ -85,21 +85,28 @@ public class Administrador extends Persona {
     public static void verLaboratoristas(ArrayList<Laboratorista> laboratoristas){
         
         for(int i=0;i<laboratoristas.size();i++) {
+            if(!laboratoristas.get(i).getNombre().equals("")){
 			System.out.print((i+1)+". ");
 			System.out.print("Nombre: " + laboratoristas.get(i).getNombre()+"  ");
 			System.out.print( ", Apellido: " + laboratoristas.get(i).getApellido()+"  ");
 			System.out.print( ", Documento: " + laboratoristas.get(i).getDocumento()+"  \n");
 		}
+        }
     }
     
     public static void verEquipos(ArrayList<Equipo> equipos){
         for(int i=0;i<equipos.size();i++) {
-			System.out.print((i+1)+". ");
+            
+            if(!equipos.get(i).getEquipo().equals("")){
+            System.out.print((i+1)+". ");
 			System.out.print("Equipo: " + equipos.get(i).getEquipo()+"  ");
 			System.out.print( ", Marca: " + equipos.get(i).getMarca()+"  ");
 			System.out.print( ", Codigo: " + equipos.get(i).getCodigo()+"  ");
                         System.out.println(", Estado: "+ equipos.get(i).getEstado()+"  ");
-                        System.out.println(", Disponibilidad: "+equipos.get(i).getDisposicion());            
+                        System.out.println(", Disponibilidad: "+equipos.get(i).getDisposicion());  
+            }
+            
+			          
 	}
     }
     

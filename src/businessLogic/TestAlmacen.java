@@ -19,14 +19,14 @@ public class TestAlmacen {
     public static void main(String[] args) {
         System.out.println("Hola Juan no me funciona de nuevo");
         Administrador administrador = new Administrador("Milena", "Diaz", "1122", "MileD");
-        Laboratorista laboratorista = new Laboratorista("Juan", "Montenegro", "2233", "MonteB");
-        Estudiante estudiante = new Estudiante("Eduardo", "Toro", "3344", "Edu23", "Ing. Electronica", "2",false);
+        Laboratorista laboratorista = new Laboratorista("Juan", "Montenegro", "2233", "xxxx");
+        
         Equipo equipo= new Equipo("Multimetro", "Flux", "1010","Bueno", "Disponible"); 
         ArrayList<Laboratorista> laboratoristas= new ArrayList<>(); 
         ArrayList<Estudiante> estudiantes= new ArrayList<>();
     	ArrayList<Equipo> equipos=new ArrayList<>(20);
         equipos.add(equipo);
-        estudiantes.add(estudiante);
+
         laboratoristas.add(laboratorista); 
         Scanner leer = new Scanner(System.in);
         int x = 0, y = 0, z=0;
@@ -43,17 +43,17 @@ public class TestAlmacen {
     	 Equipo equipo7=new Equipo(null,null,null,null,  null);
     	 Equipo equipo8=new Equipo(null,null,null,null, null);
     	 Equipo equipo9=new Equipo(null,null,null,null, null);
-    	 Equipo equipo10=new Equipo(null,null,null,null, null);
-    	 Equipo equipo11=new Equipo(null,null,null,null, null);
-    	 Equipo equipo12=new Equipo(null,null,null,null, null);
-    	 Equipo equipo13=new Equipo(null,null,null,null, null);
-    	 Equipo equipo14=new Equipo(null,null,null,null, null);
-    	 Equipo equipo15=new Equipo(null,null,null,null, null);
-    	 Equipo equipo16=new Equipo(null,null,null,null, null);
-    	 Equipo equipo17=new Equipo(null,null,null,null, null);
-    	 Equipo equipo18=new Equipo(null,null,null,null, null);
-    	 Equipo equipo19=new Equipo(null,null,null,null, null);
-    	 Equipo equipo20=new Equipo(null,null,null,null, null);
+    	 Equipo equipo10=new Equipo("",null,null,null, null);
+    	 Equipo equipo11=new Equipo("",null,null,null, null);
+    	 Equipo equipo12=new Equipo("",null,null,null, null);
+    	 Equipo equipo13=new Equipo("",null,null,null, null);
+    	 Equipo equipo14=new Equipo("",null,null,null, null);
+    	 Equipo equipo15=new Equipo("",null,null,null, null);
+    	 Equipo equipo16=new Equipo("",null,null,null, null);
+    	 Equipo equipo17=new Equipo("",null,null,null, null);
+    	 Equipo equipo18=new Equipo("",null,null,null, null);
+    	 Equipo equipo19=new Equipo("",null,null,null, null);
+    	 Equipo equipo20=new Equipo("",null,null,null, null);
     	 equipos.add(equipo1);
     	 equipos.add(equipo2);
     	 equipos.add(equipo3);
@@ -203,11 +203,11 @@ public class TestAlmacen {
             
             
         //En esta parte instancio todos los laboratoristas para después crearlos y leerlos
-    	 Laboratorista laboratorista1=new Laboratorista(null,null,null,null);
-    	 Laboratorista laboratorista2=new Laboratorista(null,null,null,null);
-    	 Laboratorista laboratorista3=new Laboratorista(null,null,null,null);
-    	 Laboratorista laboratorista4=new Laboratorista(null,null,null,null);
-         Laboratorista laboratorista5=new Laboratorista(null,null,null,null);
+    	 Laboratorista laboratorista1=new Laboratorista("",null,null,null);
+    	 Laboratorista laboratorista2=new Laboratorista("",null,null,null);
+    	 Laboratorista laboratorista3=new Laboratorista("",null,null,null);
+    	 Laboratorista laboratorista4=new Laboratorista("",null,null,null);
+         Laboratorista laboratorista5=new Laboratorista("",null,null,null);
     	
     	 laboratoristas.add(laboratorista1);
     	 laboratoristas.add(laboratorista2);
@@ -333,8 +333,186 @@ public class TestAlmacen {
          
         //fin de mostrar laboratoristas
         //**********************************************************************
+            //En esta parte instancio todos los estudiantes para después crearlos y leerlos
+         Estudiante estudiante = new Estudiante("Eduardo", "Toro", "3344", "Edu23", "Ing. Electronica", "2",false);
+    	 Estudiante estudiante1=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante2=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante3=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante4=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante5=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante6=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante7=new Estudiante("",null,null,null,  null,null,false);
+    	 Estudiante estudiante8=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante9=new Estudiante("",null,null,null,null,null,false);
+    	 Estudiante estudiante10=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante11=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante12=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante13=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante14=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante15=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante16=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante17=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante18=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante19=new Estudiante("",null,null,null, null,null,false);
+         Estudiante estudiante20=new Estudiante("",null,null,null, null,null,false);
+         estudiantes.add(estudiante);
+    	 estudiantes.add(estudiante1);
+    	 estudiantes.add(estudiante2);
+    	 estudiantes.add(estudiante3);
+    	 estudiantes.add(estudiante4);
+    	 estudiantes.add(estudiante5);
+    	 estudiantes.add(estudiante6);
+    	 estudiantes.add(estudiante7);
+    	 estudiantes.add(estudiante8);
+    	 estudiantes.add(estudiante9);
+    	 estudiantes.add(estudiante10);
+    	 estudiantes.add(estudiante11);
+    	 estudiantes.add(estudiante12);
+    	 estudiantes.add(estudiante13);
+    	 estudiantes.add(estudiante14);
+    	 estudiantes.add(estudiante15);
+    	 estudiantes.add(estudiante16);
+    	 estudiantes.add(estudiante17);
+    	 estudiantes.add(estudiante18);
+    	 estudiantes.add(estudiante19);
+    	 estudiantes.add(estudiante20);
+         //Aqui termina la instanciación de los equipos
+         
+         //contador para uso de txt
+         int contador4=0,contador5=0;
+         
+         
+        //**************Estudiantes, leer txt**************************
+         
+         //Contar lineas
+         long numeroLineas2 = 0;
+    	 try{
+             //Ojo aqui se debe poner la ubicacuión del archivo:
+             //C:\Users\Stiven\Desktop
+             //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
+    		 	FileReader fr2 = new FileReader("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
+    	 		BufferedReader bf2 = new BufferedReader(fr2);
+    	 		
+    	 		 
+    	 		String cadena2;
+				while ((cadena2 = bf2.readLine())!=null) {
+    	 		  numeroLineas2++;
+    	 		}
+    		} catch (FileNotFoundException fnfe){
+    		  fnfe.printStackTrace();
+    		} catch (IOException ioe){
+    		  ioe.printStackTrace();
+    		}
+    	 System.out.println("El fichero tiene " + numeroLineas2 + " lineas");
+    	 
+         //Fin contar lineas
+         
+         
+         	
+    	 File archivo2 = null;
+         FileReader fr2 = null;
+         BufferedReader br2 = null;
+
+         try {
+            // Apertura del fichero y creacion de BufferedReader para poder
+            // hacer una lectura comoda (disponer del metodo readLine()).
+            //Ojo aqui se debe poner la ubicacuión del archivo:
+            archivo2 = new File ("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
+            fr2 = new FileReader (archivo2);
+            br2 = new BufferedReader(fr2);
+
+            // Lectura del fichero
+            String linea2;
             
+            ArrayList<String> guardador2=new ArrayList<>();
+        
+            while((linea2=br2.readLine())!=null) {
+            	contador5++;
+            	guardador2.add(linea2);
+            	
+            	if(contador5==7) {
+            		
+                	
+                	
+                	estudiantes.get(contador4).setNombre(guardador2.get(0));
+                	estudiantes.get(contador4).setApellido(guardador2.get(1));
+                	estudiantes.get(contador4).setDocumento(guardador2.get(2));
+                        estudiantes.get(contador4).setClave(guardador2.get(3));
+                        estudiantes.get(contador4).setCarrera(guardador2.get(4));
+                        estudiantes.get(contador4).setSemestre(guardador2.get(5));
+                        estudiantes.get(contador4).setSancion( Boolean.valueOf(guardador2.get(6)));
+                	guardador2.clear();
+                	contador4++;
+                	contador5=0;
+                	}
+            	
+            }
             
+        	
+         }
+         catch(Exception e){
+            e.printStackTrace();
+         }finally{
+            // En el finally cerramos el fichero, para asegurarnos
+            // que se cierra tanto si todo va bien como si salta 
+            // una excepcion.
+            try{                    
+               if( null != fr2 ){   
+                  fr.close();     
+               }                  
+            }catch (Exception e2){ 
+               e2.printStackTrace();
+            }
+         }
+         
+         
+        //**************FIN Estudiantes, leer txt**********************
+        //mostrar laboratoristas
+         
+         
+         System.out.println("-------------------------------------------------------------------------------------");
+         System.out.println("      |Nombre                        |Apellido          |Documento         |   Clave    | "
+                 + "            Carrera    |       Semestre |     Sancion   |");
+         for(int i=0;i<numeroLineas2/7;i++) {
+        	 int masa=estudiantes.get(i).getNombre().length();
+             System.out.print("|"+(i+1)+". ");
+            if((i+1)>=10){System.
+                    
+                    out.print(" ");}
+            else{System.out.print("  ");}
+            System.out.print("|"+estudiantes.get(i).getNombre());
+            for (int k = 0; k < (30-masa); k++) {
+				System.out.print(" ");
+			}
+            System.out.print("|"+estudiantes.get(i).getApellido());
+            for (int k = 0; k < (15-estudiantes.get(i).getApellido().length()); k++) {
+				System.out.print(" ");
+			}
+            System.out.print("|"+estudiantes.get(i).getDocumento());
+            for (int k = 0; k < (30-estudiantes.get(i).getDocumento().length()); k++) {
+				System.out.print(" ");
+			}
+            System.out.print("|    "+estudiantes.get(i).getClave()+"    |");
+            for (int k = 0; k < (15-estudiantes.get(i).getClave().length()); k++) {
+				System.out.print(" ");
+			}
+            System.out.print("    "+estudiantes.get(i).getCarrera()+"    |");
+            for (int k = 0; k < (15-estudiantes.get(i).getCarrera().length()); k++) {
+				System.out.print(" ");
+			}
+            System.out.print("    "+estudiantes.get(i).getSemestre()+"    |");
+            for (int k = 0; k < (15-estudiantes.get(i).getSemestre().length()); k++) {
+				System.out.print(" ");
+			}
+            System.out.println("    "+String.valueOf(estudiantes.get(i).isSancion())+"    |");
+           
+             }
+            System.out.println("");
+             
+         
+        //fin de mostrar laboratoristas
+        
+         
         while (x == 0) {
             System.out.println("\t\tAlmacen De Equipos\n\t     Electricos Y Electronicos\n\n");
             System.out.println("1. Administrador");
@@ -443,7 +621,7 @@ public class TestAlmacen {
           
                                     
                                     //fin de escribir laboratoristas
-                         
+                         laboratoristas.add(laboratoristax);
                                     System.out.println("\nDesea Regresar: ");
                                     System.out.println("1. Si");
                                     System.out.println("2. No");
@@ -570,7 +748,7 @@ public class TestAlmacen {
           
                                     
                                     //fin de escribir equipos
-                         
+                         equipos.add(equipox);
                                     System.out.println("\nDesea Regresar: ");
                                     System.out.println("1. Si");
                                     System.out.println("2. No");
@@ -628,6 +806,7 @@ public class TestAlmacen {
                 //**************************************************************
                 case "2":
                     while (y == 0) {
+                        System.out.println(laboratorista.getClave());
                         System.out.println("\tLABORATORISTA");
                         System.out.println("Usuario: ");
                         usuario = leer.nextLine();
