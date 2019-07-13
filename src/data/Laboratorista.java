@@ -58,7 +58,12 @@ public class Laboratorista extends Persona{
 		String estadoN=entrada.nextLine();
 		if(!estadoN.equals("0")) {
 			equipox.setEstado(estadoN);        
-		}		
+		}
+                System.out.println("\nNueva Disponibilidad: ");
+		String disponibilidadN=entrada.nextLine();
+		if(!disponibilidadN.equals("0")) {
+			equipox.setDisposicion(disponibilidadN);        
+		}
 		return equipox;
     }
      

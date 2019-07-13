@@ -17,7 +17,6 @@ import java.util.Scanner;
 public class TestAlmacen {
         
     public static void main(String[] args) {
-        System.out.println("Hola Juan no me funciona de nuevo");
         Administrador administrador = new Administrador("Milena", "Diaz", "1122", "MileD");
         Laboratorista laboratorista = new Laboratorista("Juan", "Montenegro", "2233", "xxxx");
         
