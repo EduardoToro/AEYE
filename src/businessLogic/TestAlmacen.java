@@ -467,7 +467,7 @@ public class TestAlmacen {
          
          
         //**************FIN Estudiantes, leer txt**********************
-        //mostrar laboratoristas
+        //mostrar estudiantes
          
          
          System.out.println("-------------------------------------------------------------------------------------");
@@ -510,7 +510,7 @@ public class TestAlmacen {
             System.out.println("");
              
          
-        //fin de mostrar laboratoristas
+        //fin de mostrar estudiantes
         
          
         while (x == 0) {
@@ -646,8 +646,68 @@ public class TestAlmacen {
                                     String carreraE = leer.nextLine();
                                     System.out.println("\nSemestre: ");
                                     String semestreE = leer.nextLine();
-                                    Estudiante estudiantex= new Estudiante(nombreE, apellidoE, documentoE, claveE, carreraE, semestreE);
-                                    Administrador.crearEstudiante(estudiantes, estudiantex); 
+                                    Estudiante estudiantex= new Estudiante(nombreE, apellidoE, documentoE, claveE, carreraE, semestreE,false);
+                                    
+                                    
+                                    //aqui se escriben los estudiantes en el txt
+                                    
+                                    int cantidadEstudiantes=(int) (numeroLineas2/7);
+                                    estudiantes.get(cantidadEstudiantes+1).setNombre(estudiantex.getNombre());
+                                    estudiantes.get(cantidadEstudiantes+1).setApellido(estudiantex.getApellido());
+                                    estudiantes.get(cantidadEstudiantes+1).setDocumento(estudiantex.getDocumento());
+                                    estudiantes.get(cantidadEstudiantes+1).setClave(estudiantex.getClave());
+                                    estudiantes.get(cantidadEstudiantes+1).setCarrera(estudiantex.getCarrera());
+                                    estudiantes.get(cantidadEstudiantes+1).setCarrera(estudiantex.getSemestre());
+                                    estudiantes.get(cantidadEstudiantes+1).setSancion(estudiantex.isSancion());
+                                    BufferedWriter bw2 = null;
+                                    FileWriter fw2 = null;
+
+                                     try {
+
+                                      
+                                        File file2 = new File("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
+                                         // Si el archivo no existe, se crea!
+                                         if (!file2.exists()) {
+                                             file2.createNewFile();
+                                         }
+                                         // flag true, indica adjuntar información al archivo.
+                                         fw2 = new FileWriter(file2.getAbsoluteFile(), true);
+                                         bw2 = new BufferedWriter(fw2);
+
+                                         bw2.write(estudiantex.getNombre());
+                                         bw2.newLine();
+                                         bw2.write(estudiantex.getApellido());
+                                         bw2.newLine();
+                                         bw2.write(estudiantex.getDocumento());
+                                         bw2.newLine();
+                                         bw2.write(estudiantex.getClave());
+                                         bw2.newLine();
+                                         bw2.write(estudiantex.getCarrera());
+                                         bw2.newLine();
+                                         bw2.write(estudiantex.getSemestre());
+                                         bw2.newLine();
+                                         bw2.write(String.valueOf(estudiantex.isSancion()));
+                                         bw2.newLine();
+                                         System.out.println("información agregada!");
+                                     } catch (IOException e) {
+                                         e.printStackTrace();
+                                     } finally {
+                                         try {
+                                                         //Cierra instancias de FileWriter y BufferedWriter
+                                             if (bw2 != null)
+                                                 bw2.close();
+                                             if (fw2 != null)
+                                                 fw2.close();
+                                         } catch (IOException ex) {
+                                             ex.printStackTrace();
+                                         }
+                                     }
+          
+                                    
+                                    //fin de escribir laboratoristas
+                        //estudiantes.add(estudiantex);
+                                    
+                                  //  Administrador.crearEstudiante(estudiantes, estudiantex); 
                                     System.out.println("\nDesea Regresar: ");
                                     System.out.println("1. Si");
                                     System.out.println("2. No");

@@ -3,6 +3,11 @@ package data;
 import java.util.ArrayList;
 import java.util.Scanner;
 import data.Laboratorista;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 public class Administrador extends Persona {
     
     Scanner entrada= new Scanner(System.in); 
@@ -71,15 +76,148 @@ public class Administrador extends Persona {
     }
     
     public static void verEstudiantes(ArrayList<Estudiante> estudiantes){
-        
-        for(int i=0;i<estudiantes.size();i++) {
+        int contador4=0, contador5=0;
+       /* for(int i=0;i<estudiantes.size();i++) {
+            if(!estudiantes.get(i).getNombre().equals("")){
 			System.out.print((i+1)+". ");
 			System.out.print("Nombre: " + estudiantes.get(i).getNombre()+"  ");
 			System.out.print( ", Apellido: " + estudiantes.get(i).getApellido()+"  ");
 			System.out.print( ", Documento: " + estudiantes.get(i).getDocumento()+"  ");
                         System.out.print( ", Carrera: " + estudiantes.get(i).getCarrera()+"  ");
                         System.out.print( ", Semestre: " + estudiantes.get(i).getSemestre()+"  \n");
-		}
+		}}*/
+        
+           //**************Estudiantes, leer txt**************************
+         
+         //Contar lineas
+         long numeroLineas2 = 0;
+    	 try{
+             //Ojo aqui se debe poner la ubicacuión del archivo:
+             //C:\Users\Stiven\Desktop
+             //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
+    		 	FileReader fr2 = new FileReader("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
+    	 		BufferedReader bf2 = new BufferedReader(fr2);
+    	 		
+    	 		 
+    	 		String cadena2;
+				while ((cadena2 = bf2.readLine())!=null) {
+    	 		  numeroLineas2++;
+    	 		}
+    		} catch (FileNotFoundException fnfe){
+    		  fnfe.printStackTrace();
+    		} catch (IOException ioe){
+    		  ioe.printStackTrace();
+    		}
+    	 System.out.println("El fichero tiene " + numeroLineas2 + " lineas");
+    	 
+         //Fin contar lineas
+         
+         
+         	
+    	 File archivo2 = null;
+         FileReader fr2 = null;
+         BufferedReader br2 = null;
+
+         try {
+            // Apertura del fichero y creacion de BufferedReader para poder
+            // hacer una lectura comoda (disponer del metodo readLine()).
+            //Ojo aqui se debe poner la ubicacuión del archivo:
+            archivo2 = new File ("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
+            fr2 = new FileReader (archivo2);
+            br2 = new BufferedReader(fr2);
+
+            // Lectura del fichero
+            String linea2;
+            
+            ArrayList<String> guardador2=new ArrayList<>();
+        
+            while((linea2=br2.readLine())!=null) {
+            	contador5++;
+            	guardador2.add(linea2);
+            	
+            	if(contador5==7) {
+            		
+                	
+                	
+                	estudiantes.get(contador4).setNombre(guardador2.get(0));
+                	estudiantes.get(contador4).setApellido(guardador2.get(1));
+                	estudiantes.get(contador4).setDocumento(guardador2.get(2));
+                        estudiantes.get(contador4).setClave(guardador2.get(3));
+                        estudiantes.get(contador4).setCarrera(guardador2.get(4));
+                        estudiantes.get(contador4).setSemestre(guardador2.get(5));
+                        estudiantes.get(contador4).setSancion( Boolean.valueOf(guardador2.get(6)));
+                	guardador2.clear();
+                	contador4++;
+                	contador5=0;
+                	}
+            	
+            }
+            
+        	
+         }
+         catch(Exception e){
+            e.printStackTrace();
+         }finally{
+            // En el finally cerramos el fichero, para asegurarnos
+            // que se cierra tanto si todo va bien como si salta 
+            // una excepcion.
+            try{                    
+               if( null != fr2 ){   
+                  fr2.close();     
+               }                  
+            }catch (Exception e2){ 
+               e2.printStackTrace();
+            }
+         }
+        
+        
+           //mostrar estudiantes
+         
+         
+         System.out.println("-------------------------------------------------------------------------------------");
+         System.out.println("      |Nombre                        |Apellido          |Documento         |   Clave    | "
+                 + "            Carrera    |       Semestre |     Sancion   |");
+         for(int i=0;i<numeroLineas2/7;i++) {
+        	 int masa=estudiantes.get(i).getNombre().length();
+             System.out.print("|"+(i+1)+". ");
+            if((i+1)>=10){System.
+                    
+                    out.print(" ");}
+            else{System.out.print("  ");}
+            System.out.print("|"+estudiantes.get(i).getNombre());
+            for (int k = 0; k < (30-masa); k++) {
+				System.out.print(" ");
+			}
+            System.out.print("|"+estudiantes.get(i).getApellido());
+            for (int k = 0; k < (15-estudiantes.get(i).getApellido().length()); k++) {
+				System.out.print(" ");
+			}
+            System.out.print("|"+estudiantes.get(i).getDocumento());
+            for (int k = 0; k < (30-estudiantes.get(i).getDocumento().length()); k++) {
+				System.out.print(" ");
+			}
+            System.out.print("|    "+estudiantes.get(i).getClave()+"    |");
+            for (int k = 0; k < (15-estudiantes.get(i).getClave().length()); k++) {
+				System.out.print(" ");
+			}
+            System.out.print("    "+estudiantes.get(i).getCarrera()+"    |");
+            for (int k = 0; k < (15-estudiantes.get(i).getCarrera().length()); k++) {
+				System.out.print(" ");
+			}
+            System.out.print("    "+estudiantes.get(i).getSemestre()+"    |");
+            for (int k = 0; k < (15-estudiantes.get(i).getSemestre().length()); k++) {
+				System.out.print(" ");
+			}
+            System.out.println("    "+String.valueOf(estudiantes.get(i).isSancion())+"    |");
+           
+             }
+            System.out.println("");
+             
+         
+        //fin de mostrar estudiantes
+        
+         
+        
     }
     
     public static void verLaboratoristas(ArrayList<Laboratorista> laboratoristas){
