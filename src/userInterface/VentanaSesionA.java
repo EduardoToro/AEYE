@@ -42,11 +42,11 @@ public class VentanaSesionA extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Almacén De Equipos Eléctrica Y Electrónica");
+        setTitle("Almacén De Equipos Eléctricos Y Electrónicos");
         setPreferredSize(new java.awt.Dimension(480, 610));
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Inicio Sesion", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Trebuchet MS", 0, 16))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Inicio Sesion Administrador", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Trebuchet MS", 0, 16))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -185,15 +185,12 @@ public class VentanaSesionA extends javax.swing.JFrame {
         String usuario="Milena"; 
         String clave="MileD"; 
         String passw= new String (txtClave.getPassword()); 
-        if(txtUsuario.getText().equals(usuario)){
-            if(passw.equals(clave)){
+        if(txtUsuario.getText().equals(usuario) && passw.equals(clave)){
                 MenuAdministrador ventanaA= new MenuAdministrador(); 
-                ventanaA.setVisible(true); 
-            }else{
-                JOptionPane.showMessageDialog(this, "Contraseña Incorrecta\nIntentelo Nuevamente");
-            }   
+                ventanaA.setVisible(true);   
         }else{
-            JOptionPane.showMessageDialog(this, "Usuario Incorrecto\nIntentelo Nuevamente");
+            JOptionPane.showMessageDialog(this, "Usuario y/o Contraseña Incorrecto\nIntentelo Nuevamente",
+                    "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnIngresarActionPerformed
 
@@ -227,6 +224,18 @@ public class VentanaSesionA extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VentanaSesionA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
