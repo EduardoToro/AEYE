@@ -87,7 +87,7 @@ public class TestAlmacen {
              //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-    		 	FileReader fr = new FileReader("C:\\Users\\Stiven\\Desktop\\Datos.txt");
+    		 	FileReader fr = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt");
     	 		BufferedReader bf = new BufferedReader(fr);
     	 		
     	 		 
@@ -114,7 +114,7 @@ public class TestAlmacen {
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
             //Ojo aqui se debe poner la ubicacuión del archivo:
-            archivo = new File ("C:\\Users\\Stiven\\Desktop\\Datos.txt");
+            archivo = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
 
@@ -228,7 +228,7 @@ public class TestAlmacen {
              //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-    		 	FileReader fr1 = new FileReader("C:\\Users\\Stiven\\Desktop\\Laboratoristas.txt");
+    		 	FileReader fr1 = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Laboratoristas.txt");
     	 		BufferedReader bf1 = new BufferedReader(fr1);
     	 		
     	 		 
@@ -255,7 +255,7 @@ public class TestAlmacen {
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
             //Ojo aqui se debe poner la ubicacuión del archivo:
-            archivo = new File ("C:\\Users\\Stiven\\Desktop\\Laboratoristas.txt");
+            archivo = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Laboratoristas.txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
 
@@ -389,7 +389,7 @@ public class TestAlmacen {
              //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-    		 	FileReader fr2 = new FileReader("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
+    		 	FileReader fr2 = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
     	 		BufferedReader bf2 = new BufferedReader(fr2);
     	 		
     	 		 
@@ -416,7 +416,7 @@ public class TestAlmacen {
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
             //Ojo aqui se debe poner la ubicacuión del archivo:
-            archivo2 = new File ("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
+            archivo2 = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
             fr2 = new FileReader (archivo2);
             br2 = new BufferedReader(fr2);
 
