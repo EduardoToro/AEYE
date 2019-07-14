@@ -1,8 +1,9 @@
 package data;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
-public class Estudiante extends Persona{
+public final class Estudiante extends Persona{
     ArrayList<Equipo> listaEquipos= new ArrayList<>(); 
     private String carrera;
     private String semestre; 
@@ -71,5 +72,5 @@ public class Estudiante extends Persona{
     public void setSancion(boolean sancion) {
         this.sancion = sancion;
     }
-    
+  
 }

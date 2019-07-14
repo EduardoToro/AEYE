@@ -248,4 +248,42 @@ public class Administrador extends Persona {
 	}
     }
     
+    public final int iniciarSecion(ArrayList<Estudiante> estudiantes){
+        int x=0,y=0,z=0,i=0,k=-1,aux=0;
+        String nombre,contraseña;
+        Scanner entrada=new Scanner(System.in);
+        for( i=0;i<estudiantes.size();i++){
+        while(x==0){
+         
+            System.out.println("\tESTUDIANTE");
+            System.out.println("Usuario: ");
+            nombre=entrada.nextLine();
+          for( i=0;i<estudiantes.size();i++){
+              
+              if(estudiantes.get(i).getNombre().equals(nombre)){k=i;break;}
+          }
+                if(k!=-1){
+                  while(z==0){
+                  System.out.println("contraseña: ");
+                  contraseña=entrada.nextLine();
+                    if(contraseña.equals(estudiantes.get(k).getClave())){
+                        x=1;
+                        y=1;
+                        z=1;
+                        break;
+                    }
+                    else{
+                        System.out.println("Contraseña Incorrecta, Intentelo Nuevamente");
+                        x=0; z=0;}
+                  } 
+                                 }
+                else{ System.out.println("Usuario Incorrecto, Intentelo Nuevamente");
+                      x=0;}
+            //}
+                i++;
+        }}
+        return y;
+    }
+    
+    
 }

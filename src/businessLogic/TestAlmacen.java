@@ -85,9 +85,9 @@ public class TestAlmacen {
          long numeroLineas = 0;
     	 try{
              //Ojo aqui se debe poner la ubicacuión del archivo:
-             //C:\Users\Stiven\Desktop
+             //C:\Users\Stiven\Desktop\\Datos.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-    		 	FileReader fr = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt");
+    		 	FileReader fr = new FileReader("C:\\Users\\Stiven\\Desktop\\Datos.txt");
     	 		BufferedReader bf = new BufferedReader(fr);
     	 		
     	 		 
@@ -114,7 +114,9 @@ public class TestAlmacen {
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
             //Ojo aqui se debe poner la ubicacuión del archivo:
-            archivo = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt");
+             //C:\Users\Stiven\Desktop\\Datos.txt
+             //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
+            archivo = new File ("C:\\Users\\Stiven\\Desktop\\Datos.txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
 
@@ -225,10 +227,10 @@ public class TestAlmacen {
          //Contar lineas
          long numeroLineas1 = 0;
     	 try{
-             //Ojo aqui se debe poner la ubicacuión del archivo:
-             //C:\Users\Stiven\Desktop
+              //Ojo aqui se debe poner la ubicacuión del archivo:
+             //C:\Users\Stiven\Desktop\\Laboratoristas.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-    		 	FileReader fr1 = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Laboratoristas.txt");
+    		 	FileReader fr1 = new FileReader("C:\\Users\\Stiven\\Desktop\\Laboratoristas.txt");
     	 		BufferedReader bf1 = new BufferedReader(fr1);
     	 		
     	 		 
@@ -254,8 +256,10 @@ public class TestAlmacen {
          try {
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
-            //Ojo aqui se debe poner la ubicacuión del archivo:
-            archivo = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Laboratoristas.txt");
+             //Ojo aqui se debe poner la ubicacuión del archivo:
+             //C:\Users\Stiven\Desktop\\Laboratoristas.txt
+             //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
+            archivo = new File ("C:\\Users\\Stiven\\Desktop\\Laboratoristas.txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
 
@@ -387,9 +391,9 @@ public class TestAlmacen {
          long numeroLineas2 = 0;
     	 try{
              //Ojo aqui se debe poner la ubicacuión del archivo:
-             //C:\Users\Stiven\Desktop
+             //C:\Users\Stiven\Desktop\estudiantes.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-    		 	FileReader fr2 = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
+    		 	FileReader fr2 = new FileReader("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
     	 		BufferedReader bf2 = new BufferedReader(fr2);
     	 		
     	 		 
@@ -416,7 +420,9 @@ public class TestAlmacen {
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
             //Ojo aqui se debe poner la ubicacuión del archivo:
-            archivo2 = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
+             //C:\Users\Stiven\Desktop\estudiantes.txt
+             //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
+            archivo2 = new File ("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
             fr2 = new FileReader (archivo2);
             br2 = new BufferedReader(fr2);
 
@@ -961,7 +967,7 @@ public class TestAlmacen {
                 //**************************************************************
                 case "3":
                     while (y == 0) {
-                        System.out.println("\tESTUDIANTE");
+                      /*  System.out.println("\tESTUDIANTE");
                         System.out.println("Usuario: ");
                         usuario = leer.nextLine();
                         if (usuario.equals(estudiante.getNombre())) {
@@ -979,8 +985,11 @@ public class TestAlmacen {
                         } else {
                             System.out.println("Usuario Incorrecto, Intentelo Nuevamente");
                             y = 0;
-                        }
+                        }*/
+                      
+                       y=administrador.iniciarSecion(estudiantes);
                     }
+                    
                     while(z==0){
                     System.out.println("\nFUNCIONES ESTUDIANTE\n");
                     System.out.println("1. Solicitar Equipos");
