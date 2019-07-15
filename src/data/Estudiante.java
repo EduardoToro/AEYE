@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Estudiante extends Persona{
-    ArrayList<Equipo> listaEquipos= new ArrayList<>(); 
+    public static ArrayList<Equipo> listaEquipos= new ArrayList<>(); 
     private String carrera;
     private String semestre; 
     private boolean sancion;  

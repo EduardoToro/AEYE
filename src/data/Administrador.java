@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-public class Administrador extends Persona {
+public  final class Administrador extends Persona {
     
     Scanner entrada= new Scanner(System.in); 
     ArrayList<Laboratorista> laboratoristas= new ArrayList<>(); 
