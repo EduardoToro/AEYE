@@ -54,6 +54,11 @@ public class MenuLaboratorista extends javax.swing.JFrame {
         btnLE.setBackground(new java.awt.Color(255, 0, 0));
         btnLE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnLE.setText("Lista Equipos");
+        btnLE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLEActionPerformed(evt);
+            }
+        });
 
         btnRE.setBackground(new java.awt.Color(255, 0, 0));
         btnRE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -139,6 +144,11 @@ public class MenuLaboratorista extends javax.swing.JFrame {
         VentanaInicio ventanaI= new VentanaInicio(); 
         ventanaI.setVisible(true);
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnLEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLEActionPerformed
+        ListaEquipos le= new ListaEquipos(); 
+        le.setVisible(true);
+    }//GEN-LAST:event_btnLEActionPerformed
 
     /**
      * @param args the command line arguments
