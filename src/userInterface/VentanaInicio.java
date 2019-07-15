@@ -24,6 +24,7 @@ public class VentanaInicio extends javax.swing.JFrame {
         jLabel1.setHorizontalTextPosition (JLabel.CENTER);
         jLabel1.setVerticalTextPosition (JLabel.CENTER);
         setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
+        
     }
 
     /**
@@ -152,6 +153,7 @@ public class VentanaInicio extends javax.swing.JFrame {
     private void btnAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAActionPerformed
         VentanaSesionA ventanaA= new VentanaSesionA(); 
         ventanaA.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnAActionPerformed
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
@@ -161,11 +163,13 @@ public class VentanaInicio extends javax.swing.JFrame {
     private void btnLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLActionPerformed
         VentanaSesionL ventanaL= new VentanaSesionL(); 
         ventanaL.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnLActionPerformed
 
     private void btnEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEActionPerformed
         VentanaSesionE ventanaE= new VentanaSesionE(); 
         ventanaE.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnEActionPerformed
 
     /**

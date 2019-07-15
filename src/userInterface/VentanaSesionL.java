@@ -5,6 +5,8 @@
  */
 package userInterface;
 
+import data.Laboratorista;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -14,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author Eduar
  */
 public class VentanaSesionL extends javax.swing.JFrame {
-
+        ArrayList<Laboratorista> laboratoristas= new ArrayList<>(); 
     /**
      * Creates new form VentanaSesionL
      */
@@ -25,6 +27,7 @@ public class VentanaSesionL extends javax.swing.JFrame {
         jLabel1.setHorizontalTextPosition (JLabel.CENTER);
         jLabel1.setVerticalTextPosition (JLabel.CENTER);
         setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
+        
     }
 
     /**
@@ -180,16 +183,7 @@ public class VentanaSesionL extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bntIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntIngresarActionPerformed
-         String usuario="Milena"; 
-        String clave="MileD"; 
-        String passw= new String (txtClave.getPassword()); 
-        if(txtUsuario.getText().equals(usuario) && passw.equals(clave)){
-                MenuAdministrador ventanaA= new MenuAdministrador(); 
-                ventanaA.setVisible(true);   
-        }else{
-            JOptionPane.showMessageDialog(this, "Usuario y/o Contraseña Incorrecto\nIntentelo Nuevamente",
-                    "Error", JOptionPane.ERROR_MESSAGE);
-        }
+
     }//GEN-LAST:event_bntIngresarActionPerformed
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
@@ -199,37 +193,14 @@ public class VentanaSesionL extends javax.swing.JFrame {
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         VentanaInicio ventanaI= new VentanaInicio(); 
         ventanaI.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaSesionL.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaSesionL.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaSesionL.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaSesionL.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+          java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new VentanaSesionL().setVisible(true);
             }

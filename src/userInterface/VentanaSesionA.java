@@ -187,7 +187,8 @@ public class VentanaSesionA extends javax.swing.JFrame {
         String passw= new String (txtClave.getPassword()); 
         if(txtUsuario.getText().equals(usuario) && passw.equals(clave)){
                 MenuAdministrador ventanaA= new MenuAdministrador(); 
-                ventanaA.setVisible(true);   
+                ventanaA.setVisible(true);  
+                dispose();
         }else{
             JOptionPane.showMessageDialog(this, "Usuario y/o Contraseña Incorrecto\nIntentelo Nuevamente",
                     "Error", JOptionPane.ERROR_MESSAGE);
@@ -197,6 +198,7 @@ public class VentanaSesionA extends javax.swing.JFrame {
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         VentanaInicio ventanaI= new VentanaInicio(); 
         ventanaI.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**

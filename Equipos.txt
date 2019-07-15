@@ -62,7 +62,4 @@ Frecuencimetro
 ELV
 013
 Bueno
-Frecuencimetro
-ELV
-013
-Bueno
+Disponible

@@ -13,6 +13,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import userInterface.VentanaInicio;
+import userInterface.VentanaSesionL;
 
 public class TestAlmacen {
         
@@ -87,7 +89,7 @@ public class TestAlmacen {
              //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop\\Datos.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-    		 	FileReader fr = new FileReader("C:\\Users\\Stiven\\Desktop\\Datos.txt");
+    		 	FileReader fr = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt");
     	 		BufferedReader bf = new BufferedReader(fr);
     	 		
     	 		 
@@ -116,7 +118,7 @@ public class TestAlmacen {
             //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop\\Datos.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-            archivo = new File ("C:\\Users\\Stiven\\Desktop\\Datos.txt");
+            archivo = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
 
@@ -230,7 +232,7 @@ public class TestAlmacen {
               //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop\\Laboratoristas.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-    		 	FileReader fr1 = new FileReader("C:\\Users\\Stiven\\Desktop\\Laboratoristas.txt");
+    		 	FileReader fr1 = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Laboratoristas.txt");
     	 		BufferedReader bf1 = new BufferedReader(fr1);
     	 		
     	 		 
@@ -259,7 +261,7 @@ public class TestAlmacen {
              //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop\\Laboratoristas.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-            archivo = new File ("C:\\Users\\Stiven\\Desktop\\Laboratoristas.txt");
+            archivo = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Laboratoristas.txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
 
@@ -393,7 +395,7 @@ public class TestAlmacen {
              //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop\estudiantes.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-    		 	FileReader fr2 = new FileReader("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
+    		 	FileReader fr2 = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
     	 		BufferedReader bf2 = new BufferedReader(fr2);
     	 		
     	 		 
@@ -422,7 +424,7 @@ public class TestAlmacen {
             //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop\estudiantes.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-            archivo2 = new File ("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
+            archivo2 = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
             fr2 = new FileReader (archivo2);
             br2 = new BufferedReader(fr2);
 
@@ -519,6 +521,8 @@ public class TestAlmacen {
         
          
         while (x == 0) {
+            VentanaInicio vI= new VentanaInicio();
+            vI.setVisible(true); 
             System.out.println("\t\tAlmacen De Equipos\n\t     Electricos Y Electronicos\n\n");
             System.out.println("1. Administrador");
             System.out.println("2. Laboratorista");

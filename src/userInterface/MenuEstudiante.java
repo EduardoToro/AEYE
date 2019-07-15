@@ -24,7 +24,7 @@ public class MenuEstudiante extends javax.swing.JFrame {
         jLabel1.setHorizontalTextPosition (JLabel.CENTER);
         jLabel1.setVerticalTextPosition (JLabel.CENTER);
         setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
-    }
+       }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -114,6 +114,7 @@ public class MenuEstudiante extends javax.swing.JFrame {
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         VentanaInicio ventanaI= new VentanaInicio(); 
         ventanaI.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**

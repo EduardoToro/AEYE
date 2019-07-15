@@ -208,6 +208,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         VentanaInicio ventanaI= new VentanaInicio();
         ventanaI.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**

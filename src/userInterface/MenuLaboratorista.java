@@ -24,6 +24,7 @@ public class MenuLaboratorista extends javax.swing.JFrame {
         jLabel2.setHorizontalTextPosition (JLabel.CENTER);
         jLabel2.setVerticalTextPosition (JLabel.CENTER);
         setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
+        
     }
 
     /**
@@ -143,11 +144,14 @@ public class MenuLaboratorista extends javax.swing.JFrame {
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         VentanaInicio ventanaI= new VentanaInicio(); 
         ventanaI.setVisible(true);
+        dispose();
+
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnLEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLEActionPerformed
         ListaEquipos le= new ListaEquipos(); 
         le.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnLEActionPerformed
 
     /**
