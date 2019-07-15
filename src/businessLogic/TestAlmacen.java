@@ -967,26 +967,6 @@ public class TestAlmacen {
                 //**************************************************************
                 case "3":
                     while (y == 0) {
-                      /*  System.out.println("\tESTUDIANTE");
-                        System.out.println("Usuario: ");
-                        usuario = leer.nextLine();
-                        if (usuario.equals(estudiante.getNombre())) {
-                            while (y == 0) {
-                                System.out.println("Contraseña:");
-                                contraseña = leer.nextLine();
-                                if (contraseña.equals(estudiante.getClave())) {
-                                    //Inicio Sesion
-                                    y = 1;
-                                } else {
-                                    System.out.println("Contraseña Incorrecta, Intentelo Nuevamente");
-                                    y = 0;
-                                }
-                            }
-                        } else {
-                            System.out.println("Usuario Incorrecto, Intentelo Nuevamente");
-                            y = 0;
-                        }*/
-                      
                        y=administrador.iniciarSecion(estudiantes);
                     }
                     

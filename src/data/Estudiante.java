@@ -3,7 +3,7 @@ package data;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public final class Estudiante extends Persona{
+public class Estudiante extends Persona{
     ArrayList<Equipo> listaEquipos= new ArrayList<>(); 
     private String carrera;
     private String semestre; 
