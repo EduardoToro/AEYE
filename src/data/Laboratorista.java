@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Laboratorista extends Persona{
     
-    public static ArrayList<Estudiante> estudiante= new ArrayList<>(); 
+    public static ArrayList<Estudiante> estudiantes= new ArrayList<>(); 
     private String horario;
     
      public static Equipo recibirEquipos(Equipo equipox){

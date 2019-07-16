@@ -279,10 +279,10 @@ public class TestAlmacen {
             		
                 	
                 	
-                	laboratoristas.get(contador2).setNombre(guardador1.get(0));
-                	laboratoristas.get(contador2).setApellido(guardador1.get(1));
-                	laboratoristas.get(contador2).setDocumento(guardador1.get(2));
-                        laboratoristas.get(contador2).setClave(guardador1.get(3));
+                	Administrador.laboratoristas.get(contador2).setNombre(guardador1.get(0));
+                	Administrador.laboratoristas.get(contador2).setApellido(guardador1.get(1));
+                	Administrador.laboratoristas.get(contador2).setDocumento(guardador1.get(2));
+                        Administrador.laboratoristas.get(contador2).setClave(guardador1.get(3));
                        
                 	guardador1.clear();
                 	contador2++;
@@ -316,23 +316,23 @@ public class TestAlmacen {
          System.out.println("-------------------------------------------------------------------------------------");
          System.out.println("      |Nombre                        |Apellido       |Documento      |Clave       | ");
          for(int i=0;i<numeroLineas1/4;i++) {
-        	 int masa=laboratoristas.get(i).getNombre().length();
+        	 int masa=Administrador.laboratoristas.get(i).getNombre().length();
              System.out.print("|"+(i+1)+". ");
             if((i+1)>=10){System.out.print(" ");}
             else{System.out.print("  ");}
-            System.out.print("|"+laboratoristas.get(i).getNombre());
+            System.out.print("|"+Administrador.laboratoristas.get(i).getNombre());
             for (int k = 0; k < (30-masa); k++) {
 				System.out.print(" ");
 			}
-            System.out.print("|"+laboratoristas.get(i).getApellido());
-            for (int k = 0; k < (15-laboratoristas.get(i).getApellido().length()); k++) {
+            System.out.print("|"+Administrador.laboratoristas.get(i).getApellido());
+            for (int k = 0; k < (15-Administrador.laboratoristas.get(i).getApellido().length()); k++) {
 				System.out.print(" ");
 			}
-            System.out.print("|"+laboratoristas.get(i).getDocumento());
-            for (int k = 0; k < (15-laboratoristas.get(i).getDocumento().length()); k++) {
+            System.out.print("|"+Administrador.laboratoristas.get(i).getDocumento());
+            for (int k = 0; k < (15-Administrador.laboratoristas.get(i).getDocumento().length()); k++) {
 				System.out.print(" ");
 			}
-            System.out.println("|    "+laboratoristas.get(i).getClave()+"    |");
+            System.out.println("|    "+Administrador.laboratoristas.get(i).getClave()+"    |");
              }
             System.out.println("");
              
@@ -517,8 +517,10 @@ public class TestAlmacen {
              
          
         //fin de mostrar estudiantes
-        Laboratorista.estudiante.addAll(estudiantes);
+        Laboratorista.estudiantes.addAll(estudiantes);
         Inventario.equipos.addAll(equipos); 
+        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        System.out.println(Laboratorista.estudiantes.get(0).getNombre());    
         while (x == 0) {
             VentanaInicio vI= new VentanaInicio();
             vI.setVisible(true); 

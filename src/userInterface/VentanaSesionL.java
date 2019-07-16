@@ -5,6 +5,7 @@
  */
 package userInterface;
 
+import data.Administrador;
 import static data.Administrador.laboratoristas;
 import static data.Inventario.equipos;
 import data.Laboratorista;
@@ -188,8 +189,8 @@ public class VentanaSesionL extends javax.swing.JFrame {
        
         String pass=new String(txtClave.getPassword());
         for(int i=0;i<laboratoristas.size();i++){
-             if(laboratoristas.get(i).getNombre().equals(txtUsuario.getText())
-                     &&pass.equals(laboratoristas.get(i).getClave()))   {
+             if(Administrador.laboratoristas.get(i).getNombre().equals(txtUsuario.getText())
+                     &&pass.equals(Administrador.laboratoristas.get(i).getClave()))   {
                     MenuLaboratorista ventanaA= new MenuLaboratorista(); 
                      ventanaA.setVisible(true);  
                 dispose();
