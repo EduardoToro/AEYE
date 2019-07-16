@@ -239,7 +239,9 @@ public class MenuAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnListaEActionPerformed
 
     private void btnCEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCEquipoActionPerformed
-        
+       NuevoEquipo ventanaA= new NuevoEquipo(); 
+       ventanaA.setVisible(true);  
+       dispose();
     }//GEN-LAST:event_btnCEquipoActionPerformed
 
     /**
