@@ -518,9 +518,7 @@ public class TestAlmacen {
          
         //fin de mostrar estudiantes
         Laboratorista.estudiantes.addAll(estudiantes);
-        Inventario.equipos.addAll(equipos); 
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        System.out.println(Laboratorista.estudiantes.get(0).getNombre());    
+        Inventario.equipos.addAll(equipos);    
         while (x == 0) {
             VentanaInicio vI= new VentanaInicio();
             vI.setVisible(true); 
