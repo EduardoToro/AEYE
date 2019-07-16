@@ -88,7 +88,7 @@ public class TestAlmacen {
              //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop\\Datos.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-    		 	FileReader fr = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt");
+    		 	FileReader fr = new FileReader("src/datos/datos.txt");
     	 		BufferedReader bf = new BufferedReader(fr);
     	 		
     	 		 
@@ -117,7 +117,7 @@ public class TestAlmacen {
             //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop\\Datos.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-            archivo = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt");
+            archivo = new File ("src/datos/datos.txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
 
@@ -231,7 +231,7 @@ public class TestAlmacen {
               //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop\\Laboratoristas.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-    		 	FileReader fr1 = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Laboratoristas.txt");
+    		 	FileReader fr1 = new FileReader("src/datos/Laboratoristas.txt");
     	 		BufferedReader bf1 = new BufferedReader(fr1);
     	 		
     	 		 
@@ -260,7 +260,7 @@ public class TestAlmacen {
              //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop\\Laboratoristas.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-            archivo = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Laboratoristas.txt");
+            archivo = new File ("src/datos/Laboratoristas.txt");
             fr = new FileReader (archivo);
             br = new BufferedReader(fr);
 
@@ -394,7 +394,7 @@ public class TestAlmacen {
              //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop\estudiantes.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-    		 	FileReader fr2 = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
+    		 	FileReader fr2 = new FileReader("src/datos/estudiantes.txt");
     	 		BufferedReader bf2 = new BufferedReader(fr2);
     	 		
     	 		 
@@ -423,7 +423,7 @@ public class TestAlmacen {
             //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop\estudiantes.txt
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-            archivo2 = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
+            archivo2 = new File ("src/datos/estudiantes.txt");
             fr2 = new FileReader (archivo2);
             br2 = new BufferedReader(fr2);
 
@@ -592,7 +592,7 @@ public class TestAlmacen {
                                      try {
 
                                       
-                                        File file1 = new File("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Laboratoristas.txt");
+                                        File file1 = new File("src/datos/Laboratoristas.txt");
                                          // Si el archivo no existe, se crea!
                                          if (!file1.exists()) {
                                              file1.createNewFile();
@@ -671,7 +671,7 @@ public class TestAlmacen {
                                      try {
 
                                       
-                                        File file2 = new File("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
+                                        File file2 = new File("src/datos/estudiantes.txt");
                                          // Si el archivo no existe, se crea!
                                          if (!file2.exists()) {
                                              file2.createNewFile();
@@ -777,7 +777,7 @@ public class TestAlmacen {
                                      try {
 
                                       //ojo cambiar
-                                        File file = new File("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt");
+                                        File file = new File("src/datos/datos.txt");
                                          // Si el archivo no existe, se crea!
                                          if (!file.exists()) {
                                              file.createNewFile();

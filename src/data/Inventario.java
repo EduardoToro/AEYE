@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Inventario {
     
-    ArrayList<Equipo> equipos= new ArrayList<>(); 
+    public static ArrayList<Equipo> equipos= new ArrayList<>(); 
     
     public void equiposDisponibles(){}
     

@@ -5,6 +5,8 @@
  */
 package userInterface;
 
+import static data.Administrador.laboratoristas;
+import static data.Inventario.equipos;
 import data.Laboratorista;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
@@ -181,9 +183,26 @@ public class VentanaSesionL extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    public void iniciarSecion(){
+       
+        String pass=new String(txtClave.getPassword());
+        for(int i=0;i<laboratoristas.size();i++){
+             if(laboratoristas.get(i).getNombre().equals(txtUsuario.getText())
+                     &&pass.equals(laboratoristas.get(i).getClave()))   {
+                    MenuLaboratorista ventanaA= new MenuLaboratorista(); 
+                     ventanaA.setVisible(true);  
+                dispose();
+                 }
+             else{
+            JOptionPane.showMessageDialog(this, "Usuario y/o Contraseña Incorrecto\nIntentelo Nuevamente",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        }
+    }
     private void bntIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntIngresarActionPerformed
-
+        iniciarSecion();
     }//GEN-LAST:event_bntIngresarActionPerformed
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
