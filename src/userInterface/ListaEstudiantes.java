@@ -91,6 +91,7 @@ public class ListaEstudiantes extends javax.swing.JFrame {
             }
         });
 
+        tblDatosEstudiantes.setBackground(new java.awt.Color(255, 0, 0));
         tblDatosEstudiantes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
