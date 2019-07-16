@@ -91,6 +91,11 @@ public class MenuAdministrador extends javax.swing.JFrame {
         btnLE.setBackground(new java.awt.Color(255, 0, 0));
         btnLE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnLE.setText("Lista Estudiantes");
+        btnLE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLEActionPerformed(evt);
+            }
+        });
 
         btnLEquipos.setBackground(new java.awt.Color(255, 0, 0));
         btnLEquipos.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -221,6 +226,12 @@ public class MenuAdministrador extends javax.swing.JFrame {
         lE.setVisible(true);
         dispose(); 
     }//GEN-LAST:event_btnLEquiposActionPerformed
+
+    private void btnLEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLEActionPerformed
+        ListaEstudiantes vLE= new ListaEstudiantes(); 
+        vLE.setVisible(true);
+        dispose(); 
+    }//GEN-LAST:event_btnLEActionPerformed
 
     /**
      * @param args the command line arguments

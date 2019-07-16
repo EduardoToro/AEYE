@@ -26,6 +26,7 @@ public class VentanaSesionE extends javax.swing.JFrame {
         jLabel1.setHorizontalTextPosition (JLabel.CENTER);
         jLabel1.setVerticalTextPosition (JLabel.CENTER);
         setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
+        iniciarSecion(); 
     }
 
     /**
@@ -63,7 +64,9 @@ public class VentanaSesionE extends javax.swing.JFrame {
         jLabel2.setOpaque(true);
 
         txtUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        txtUsuario.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         txtUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtUsuario.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 153, 0)));
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsuarioActionPerformed(evt);
@@ -78,7 +81,9 @@ public class VentanaSesionE extends javax.swing.JFrame {
         jLabel3.setOpaque(true);
 
         txtClave.setBackground(new java.awt.Color(204, 204, 204));
+        txtClave.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         txtClave.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtClave.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 153, 0)));
         txtClave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtClaveActionPerformed(evt);

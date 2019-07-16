@@ -1,49 +1,21 @@
-juan
-montenegro
-1030654009
-3141
-ing. electronica	
-8
-false
 Marcela
-bernal
+Bernal
 1010
 3333
-ing. mecanica
+Ing. mecanica
 9
 false
-Juan
-Montenegro
-1010
-3030
-ing. de marranos
-9
-false
-pedro
-pedrito
+Pedro
+Fernandez
 1110
 9999
-ing. de marranitos
+Ing. Civil
 10
 false
-andres
-ricardo
+Andres
+Ochoa
 1099
 1120
-ing. de petroleos
+Ing. Sistemas
 11
-false
-J
-elhombre
-101010
-333
-ing. de amistad
-8
-false
-k
-agente
-111
-222
-ing. de la nasa
-7
 false

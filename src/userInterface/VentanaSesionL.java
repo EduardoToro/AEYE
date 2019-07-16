@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
  * @author Eduar
  */
 public class VentanaSesionL extends javax.swing.JFrame {
-        ArrayList<Laboratorista> laboratoristas= new ArrayList<>(); 
+        
     /**
      * Creates new form VentanaSesionL
      */
@@ -29,8 +29,7 @@ public class VentanaSesionL extends javax.swing.JFrame {
         this.setResizable(false);
         jLabel1.setHorizontalTextPosition (JLabel.CENTER);
         jLabel1.setVerticalTextPosition (JLabel.CENTER);
-        setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
-        
+        setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());        
     }
 
     /**
@@ -185,25 +184,27 @@ public class VentanaSesionL extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    public void iniciarSecion(){
-       
+    public boolean iniciarSecion(){
+        boolean x= false; 
         String pass=new String(txtClave.getPassword());
         for(int i=0;i<laboratoristas.size();i++){
-             if(Administrador.laboratoristas.get(i).getNombre().equals(txtUsuario.getText())
+             if(txtUsuario.getText().equals(Administrador.laboratoristas.get(i).getNombre())
                      &&pass.equals(Administrador.laboratoristas.get(i).getClave()))   {
-                    MenuLaboratorista ventanaA= new MenuLaboratorista(); 
-                     ventanaA.setVisible(true);  
-                dispose();
-                 }
-             else{
+                    x= true; 
+                    break; 
+                 }        
+        }
+        return x; 
+    }
+    private void bntIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntIngresarActionPerformed
+        if(iniciarSecion()){
+            MenuLaboratorista mL= new MenuLaboratorista();
+            mL.setVisible(true);
+            dispose(); 
+        }else{
             JOptionPane.showMessageDialog(this, "Usuario y/o Contraseña Incorrecto\nIntentelo Nuevamente",
                     "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-        }
-    }
-    private void bntIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntIngresarActionPerformed
-        iniciarSecion();
     }//GEN-LAST:event_bntIngresarActionPerformed
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed

@@ -2,6 +2,7 @@ package userInterface;
 
 import data.Administrador;
 import data.Equipo;
+import data.Inventario;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -9,27 +10,15 @@ import javax.swing.table.DefaultTableModel;
 
 public class ListaEquipos extends javax.swing.JFrame {
     DefaultTableModel modelo;
-    ArrayList<Equipo> equipos= new ArrayList<>();
     Equipo equipo1= new Equipo("Multimetro", "Flux", "1010","Bueno", "Disponible");
     String buscarTexto; 
     
-     private void cargarDatos(String buscar){
-            equipos.add(equipo1);
+    private void mostrarEquipos(String buscar){
+            Inventario.equipos.add(equipo1);
             String[] titulos= {"Equipo","Marca","Codigo","Estado", "Disponibilidad"};
             String[] registro= new String[5]; 
             modelo= new DefaultTableModel(null, titulos);
-            if(buscar.equals(" ") || buscar.equals(" ")){
-            for(Equipo equipo: equipos){
-                registro[0]= equipo.getEquipo();
-                registro[1]= equipo.getMarca(); 
-                registro[2]= equipo.getCodigo(); 
-                registro[3]= equipo.getEstado();
-                registro[4]= equipo.getDisposicion(); 
-                modelo.addRow(registro);
-            }
-            this.tblDatosEquipos.setModel(modelo);
-            }else{
-                for(Equipo equipo: equipos){ 
+                for(Equipo equipo: Inventario.equipos){ 
                 if(equipo.getEquipo().contains(buscar)){
                 registro[0]= equipo.getEquipo(); 
                 registro[1]= equipo.getMarca(); 
@@ -39,16 +28,14 @@ public class ListaEquipos extends javax.swing.JFrame {
                 modelo.addRow(registro);
                 }
             }
-            this.tblDatosEquipos.setModel(modelo);
-            }
-            
+            this.tblDatosEquipos1.setModel(modelo);            
         }
     /**
      * Creates new form ListaEquipos
      */
     public ListaEquipos() {
         initComponents();
-        cargarDatos(""); 
+        mostrarEquipos(""); 
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
@@ -65,7 +52,7 @@ public class ListaEquipos extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblDatosEquipos = new javax.swing.JTable();
+        tblDatosEquipos1 = new javax.swing.JTable();
         txtBuscar = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -77,9 +64,9 @@ public class ListaEquipos extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista De Equipos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Trebuchet MS", 0, 18))); // NOI18N
 
-        tblDatosEquipos.setBackground(new java.awt.Color(255, 0, 0));
-        tblDatosEquipos.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
-        tblDatosEquipos.setModel(new javax.swing.table.DefaultTableModel(
+        tblDatosEquipos1.setBackground(new java.awt.Color(255, 0, 0));
+        tblDatosEquipos1.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        tblDatosEquipos1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -90,9 +77,11 @@ public class ListaEquipos extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tblDatosEquipos);
+        jScrollPane1.setViewportView(tblDatosEquipos1);
 
         txtBuscar.setBackground(new java.awt.Color(204, 204, 204));
+        txtBuscar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        txtBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 153, 0)));
 
         btnBuscar.setBackground(new java.awt.Color(255, 0, 0));
         btnBuscar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -174,7 +163,7 @@ public class ListaEquipos extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         buscarTexto= txtBuscar.getText(); 
-        cargarDatos(buscarTexto);
+        mostrarEquipos(buscarTexto);
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
@@ -224,7 +213,7 @@ public class ListaEquipos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblDatosEquipos;
+    private javax.swing.JTable tblDatosEquipos1;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }
