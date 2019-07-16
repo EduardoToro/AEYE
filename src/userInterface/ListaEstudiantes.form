@@ -75,7 +75,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="jButton1" min="-2" pref="120" max="-2" attributes="0"/>
+                          <Component id="btnRegresar" min="-2" pref="120" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane1" pref="545" max="32767" attributes="0"/>
                   </Group>
@@ -96,7 +96,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="143" max="-2" attributes="0"/>
                   <EmptySpace pref="44" max="32767" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="btnRegresar" min="-2" pref="35" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -153,7 +153,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="tblDatosEstudiantes">
+            <Component class="javax.swing.JTable" name="tblDatosEst">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -170,7 +170,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="btnRegresar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -181,6 +181,9 @@
             <Property name="text" type="java.lang.String" value="Regresar"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegresarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

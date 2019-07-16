@@ -17,37 +17,37 @@ import javax.swing.table.DefaultTableModel;
  * @author Eduar
  */
 public class ListaEstudiantes extends javax.swing.JFrame {
-    DefaultTableModel modelo;
+    DefaultTableModel modelo1;
     Estudiante estudianteH= new Estudiante("Lorena", "Morales", "7777", "Lore23", "Ing. Electrica", "2", false); 
-    String buscar; 
+    String encontrar; 
     
     
-     private void cargarEstudiantes(String buscar){
+     private void encontrarEstudiantes(String encontrar){
             Laboratorista.estudiantes.add(estudianteH); 
-            String[] titulos= {"Nombre","Apellido","Documento","Carrera", "Semestre"};
-            String[] registro= new String[5]; 
-            modelo= new DefaultTableModel(null, titulos);
+            String[] encabezado= {"Nombre","Apellido","Documento","Carrera", "Semestre"};
+            String[] registro1= new String[5]; 
+            modelo1= new DefaultTableModel(null, encabezado);
                 for(Estudiante estudiante: Laboratorista.estudiantes){ 
-                if(estudiante.getNombre().contains(buscar)){
-                registro[0]= estudiante.getNombre(); 
-                registro[1]= estudiante.getApellido(); 
-                registro[2]= estudiante.getDocumento(); 
-                registro[3]= estudiante.getCarrera();
-                registro[4]= estudiante.getSemestre();
-                modelo.addRow(registro);
+                if(estudiante.getNombre().contains(encontrar)){
+                registro1[0]= estudiante.getNombre(); 
+                registro1[1]= estudiante.getApellido(); 
+                registro1[2]= estudiante.getDocumento(); 
+                registro1[3]= estudiante.getCarrera();
+                registro1[4]= estudiante.getSemestre();
+                modelo1.addRow(registro1);
                 }
             }
-            this.tblDatosEstudiantes.setModel(modelo);            
+            this.tblDatosEst.setModel(modelo1);            
         }
     /**
      * Creates new form ListaEstudiantes
      */
     public ListaEstudiantes() {
         initComponents();
-        cargarEstudiantes(""); 
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
+        encontrarEstudiantes(""); 
     }
 
     /**
@@ -64,8 +64,8 @@ public class ListaEstudiantes extends javax.swing.JFrame {
         txtBuscar = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblDatosEstudiantes = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        tblDatosEst = new javax.swing.JTable();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Almacén De Equipos Eléctricos Y Electrónicos");
@@ -91,8 +91,8 @@ public class ListaEstudiantes extends javax.swing.JFrame {
             }
         });
 
-        tblDatosEstudiantes.setBackground(new java.awt.Color(255, 0, 0));
-        tblDatosEstudiantes.setModel(new javax.swing.table.DefaultTableModel(
+        tblDatosEst.setBackground(new java.awt.Color(255, 0, 0));
+        tblDatosEst.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -103,12 +103,17 @@ public class ListaEstudiantes extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tblDatosEstudiantes);
+        jScrollPane1.setViewportView(tblDatosEst);
 
-        jButton1.setBackground(new java.awt.Color(255, 0, 0));
-        jButton1.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        jButton1.setText("Regresar");
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRegresar.setBackground(new java.awt.Color(255, 0, 0));
+        btnRegresar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnRegresar.setText("Regresar");
+        btnRegresar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegresarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -127,7 +132,7 @@ public class ListaEstudiantes extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -143,7 +148,7 @@ public class ListaEstudiantes extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -168,9 +173,15 @@ public class ListaEstudiantes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        buscar= txtBuscar.getText(); 
-        cargarEstudiantes(buscar);
+        encontrar= txtBuscar.getText(); 
+        encontrarEstudiantes(encontrar); 
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+        MenuAdministrador mA= new MenuAdministrador(); 
+        mA.setVisible(true);
+        dispose(); 
+    }//GEN-LAST:event_btnRegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,11 +220,11 @@ public class ListaEstudiantes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblDatosEstudiantes;
+    private javax.swing.JTable tblDatosEst;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

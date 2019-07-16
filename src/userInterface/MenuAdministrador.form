@@ -77,7 +77,7 @@
                   <EmptySpace min="0" pref="134" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="btnLEquipos" min="-2" pref="200" max="-2" attributes="0"/>
-                      <Component id="btnLE" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Component id="btnListaE" min="-2" pref="200" max="-2" attributes="0"/>
                       <Component id="btnLL" min="-2" pref="200" max="-2" attributes="0"/>
                       <Component id="btnElE" min="-2" pref="200" max="-2" attributes="0"/>
                       <Component id="btnEE" min="-2" pref="200" max="-2" attributes="0"/>
@@ -126,7 +126,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnLL" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnLE" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnListaE" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnLEquipos" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" pref="51" max="32767" attributes="0"/>
@@ -208,6 +208,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Nuevo Equipo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCEquipoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnLL">
           <Properties>
@@ -220,7 +223,7 @@
             <Property name="text" type="java.lang.String" value="Lista Laboratoristas"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnLE">
+        <Component class="javax.swing.JButton" name="btnListaE">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="ff" type="rgb"/>
@@ -231,7 +234,7 @@
             <Property name="text" type="java.lang.String" value="Lista Estudiantes"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLEActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnListaEActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnLEquipos">

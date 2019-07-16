@@ -43,7 +43,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         btnElE = new javax.swing.JButton();
         btnCEquipo = new javax.swing.JButton();
         btnLL = new javax.swing.JButton();
-        btnLE = new javax.swing.JButton();
+        btnListaE = new javax.swing.JButton();
         btnLEquipos = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -83,17 +83,22 @@ public class MenuAdministrador extends javax.swing.JFrame {
         btnCEquipo.setBackground(new java.awt.Color(255, 0, 0));
         btnCEquipo.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnCEquipo.setText("Nuevo Equipo");
+        btnCEquipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCEquipoActionPerformed(evt);
+            }
+        });
 
         btnLL.setBackground(new java.awt.Color(255, 0, 0));
         btnLL.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnLL.setText("Lista Laboratoristas");
 
-        btnLE.setBackground(new java.awt.Color(255, 0, 0));
-        btnLE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnLE.setText("Lista Estudiantes");
-        btnLE.addActionListener(new java.awt.event.ActionListener() {
+        btnListaE.setBackground(new java.awt.Color(255, 0, 0));
+        btnListaE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnListaE.setText("Lista Estudiantes");
+        btnListaE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLEActionPerformed(evt);
+                btnListaEActionPerformed(evt);
             }
         });
 
@@ -139,7 +144,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                 .addGap(0, 134, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnLEquipos, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLE, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnListaE, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnLL, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnElE, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEE, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -180,7 +185,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnLL)
                         .addGap(18, 18, 18)
-                        .addComponent(btnLE)
+                        .addComponent(btnListaE)
                         .addGap(18, 18, 18)
                         .addComponent(btnLEquipos)
                         .addGap(18, 51, Short.MAX_VALUE)
@@ -227,11 +232,15 @@ public class MenuAdministrador extends javax.swing.JFrame {
         dispose(); 
     }//GEN-LAST:event_btnLEquiposActionPerformed
 
-    private void btnLEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLEActionPerformed
-        ListaEstudiantes vLE= new ListaEstudiantes(); 
-        vLE.setVisible(true);
-        dispose(); 
-    }//GEN-LAST:event_btnLEActionPerformed
+    private void btnListaEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListaEActionPerformed
+        ListaEstudiantes listaEst= new ListaEstudiantes(); 
+        listaEst.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnListaEActionPerformed
+
+    private void btnCEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCEquipoActionPerformed
+        
+    }//GEN-LAST:event_btnCEquipoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -275,9 +284,9 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnCL;
     private javax.swing.JButton btnEE;
     private javax.swing.JButton btnElE;
-    private javax.swing.JButton btnLE;
     private javax.swing.JButton btnLEquipos;
     private javax.swing.JButton btnLL;
+    private javax.swing.JButton btnListaE;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
