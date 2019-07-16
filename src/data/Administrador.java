@@ -71,7 +71,6 @@ public  final class Administrador extends Persona {
                 if(!semestreN.equals("0")) {
 			estudiantex.setSemestre(semestreN);
 		}
-		
 		return estudiantex;
     }
     
@@ -95,7 +94,7 @@ public  final class Administrador extends Persona {
              //Ojo aqui se debe poner la ubicacuión del archivo:
              //C:\Users\Stiven\Desktop
              //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-    		 	FileReader fr2 = new FileReader("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
+    		 	FileReader fr2 = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
     	 		BufferedReader bf2 = new BufferedReader(fr2);
     	 		
     	 		 
@@ -122,7 +121,7 @@ public  final class Administrador extends Persona {
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
             //Ojo aqui se debe poner la ubicacuión del archivo:
-            archivo2 = new File ("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
+            archivo2 = new File ("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
             fr2 = new FileReader (archivo2);
             br2 = new BufferedReader(fr2);
 

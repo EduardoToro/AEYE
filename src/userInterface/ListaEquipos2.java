@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package userInterface;
 
 import data.Administrador;
@@ -7,7 +12,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
-public class ListaEquipos extends javax.swing.JFrame {
+/**
+ *
+ * @author Eduar
+ */
+public class ListaEquipos2 extends javax.swing.JFrame {
     DefaultTableModel modelo;
     ArrayList<Equipo> equipos= new ArrayList<>();
     Equipo equipo1= new Equipo("Multimetro", "Flux", "1010","Bueno", "Disponible");
@@ -46,7 +55,7 @@ public class ListaEquipos extends javax.swing.JFrame {
     /**
      * Creates new form ListaEquipos
      */
-    public ListaEquipos() {
+    public ListaEquipos2() {
         initComponents();
         cargarDatos(""); 
         this.setLocationRelativeTo(null);
@@ -178,7 +187,7 @@ public class ListaEquipos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        MenuLaboratorista ml= new MenuLaboratorista(); 
+        MenuAdministrador ml= new MenuAdministrador(); 
         ml.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
@@ -200,20 +209,21 @@ public class ListaEquipos extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListaEquipos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaEquipos2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListaEquipos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaEquipos2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListaEquipos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaEquipos2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListaEquipos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaEquipos2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListaEquipos().setVisible(true);
+                new ListaEquipos2().setVisible(true);
             }
         });
     }

@@ -95,6 +95,11 @@ public class MenuAdministrador extends javax.swing.JFrame {
         btnLEquipos.setBackground(new java.awt.Color(255, 0, 0));
         btnLEquipos.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnLEquipos.setText("Lista Equipos");
+        btnLEquipos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLEquiposActionPerformed(evt);
+            }
+        });
 
         btnRegresar.setBackground(new java.awt.Color(255, 0, 0));
         btnRegresar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -210,6 +215,12 @@ public class MenuAdministrador extends javax.swing.JFrame {
         ventanaI.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnLEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLEquiposActionPerformed
+        ListaEquipos2 lE= new ListaEquipos2(); 
+        lE.setVisible(true);
+        dispose(); 
+    }//GEN-LAST:event_btnLEquiposActionPerformed
 
     /**
      * @param args the command line arguments

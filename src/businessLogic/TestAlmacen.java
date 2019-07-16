@@ -21,7 +21,6 @@ public class TestAlmacen {
     public static void main(String[] args) {
         Administrador administrador = new Administrador("Milena", "Diaz", "1122", "MileD");
         Laboratorista laboratorista = new Laboratorista("Juan", "Montenegro", "2233", "xxxx");
-        
         Equipo equipo= new Equipo("Multimetro", "Flux", "1010","Bueno", "Disponible"); 
         ArrayList<Laboratorista> laboratoristas= new ArrayList<>(); 
         ArrayList<Estudiante> estudiantes= new ArrayList<>();
@@ -340,26 +339,26 @@ public class TestAlmacen {
         //**********************************************************************
             //En esta parte instancio todos los estudiantes para después crearlos y leerlos
          Estudiante estudiante = new Estudiante("Eduardo", "Toro", "3344", "Edu23", "Ing. Electronica", "2",false);
-    	 Estudiante estudiante1=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante2=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante3=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante4=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante5=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante6=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante7=new Estudiante("",null,null,null,  null,null,false);
-    	 Estudiante estudiante8=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante9=new Estudiante("",null,null,null,null,null,false);
-    	 Estudiante estudiante10=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante11=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante12=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante13=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante14=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante15=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante16=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante17=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante18=new Estudiante("",null,null,null, null,null,false);
-    	 Estudiante estudiante19=new Estudiante("",null,null,null, null,null,false);
-         Estudiante estudiante20=new Estudiante("",null,null,null, null,null,false);
+    	 Estudiante estudiante1=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante2=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante3=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante4=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante5=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante6=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante7=new Estudiante(null,null,null,null,  null,null,false);
+    	 Estudiante estudiante8=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante9=new Estudiante(null,null,null,null,null,null,false);
+    	 Estudiante estudiante10=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante11=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante12=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante13=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante14=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante15=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante16=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante17=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante18=new Estudiante(null,null,null,null, null,null,false);
+    	 Estudiante estudiante19=new Estudiante(null,null,null,null, null,null,false);
+         Estudiante estudiante20=new Estudiante(null,null,null,null, null,null,false);
          estudiantes.add(estudiante);
     	 estudiantes.add(estudiante1);
     	 estudiantes.add(estudiante2);
@@ -483,9 +482,7 @@ public class TestAlmacen {
          for(int i=0;i<numeroLineas2/7;i++) {
         	 int masa=estudiantes.get(i).getNombre().length();
              System.out.print("|"+(i+1)+". ");
-            if((i+1)>=10){System.
-                    
-                    out.print(" ");}
+            if((i+1)>=10){System.out.print(" ");}
             else{System.out.print("  ");}
             System.out.print("|"+estudiantes.get(i).getNombre());
             for (int k = 0; k < (30-masa); k++) {
@@ -579,8 +576,7 @@ public class TestAlmacen {
                                     System.out.println("Contraseña: ");
                                     String clave = leer.nextLine();
                                     Laboratorista laboratoristax= new Laboratorista(nombre, apellido, documento, clave); 
-                                    
-                                    //Administrador.crearLaboratorista(laboratoristas, laboratoristax);
+                                    Administrador.crearLaboratorista(laboratoristas, laboratoristax);
                                     
                                     //aqui se escriben los laboratoristas en el txt
                                     
@@ -596,7 +592,7 @@ public class TestAlmacen {
                                      try {
 
                                       
-                                        File file1 = new File("C:\\Users\\Stiven\\Desktop\\Laboratoristas.txt");
+                                        File file1 = new File("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Laboratoristas.txt");
                                          // Si el archivo no existe, se crea!
                                          if (!file1.exists()) {
                                              file1.createNewFile();
@@ -630,7 +626,7 @@ public class TestAlmacen {
           
                                     
                                     //fin de escribir laboratoristas
-                         laboratoristas.add(laboratoristax);
+                                    laboratoristas.add(laboratoristax);
                                     System.out.println("\nDesea Regresar: ");
                                     System.out.println("1. Si");
                                     System.out.println("2. No");
@@ -656,7 +652,8 @@ public class TestAlmacen {
                                     System.out.println("\nSemestre: ");
                                     String semestreE = leer.nextLine();
                                     Estudiante estudiantex= new Estudiante(nombreE, apellidoE, documentoE, claveE, carreraE, semestreE,false);
-                                    
+                                    Administrador.crearEstudiante(estudiantes, estudiantex);
+                                    estudiantes.add(estudiantex);
                                     
                                     //aqui se escriben los estudiantes en el txt
                                     
@@ -674,7 +671,7 @@ public class TestAlmacen {
                                      try {
 
                                       
-                                        File file2 = new File("C:\\Users\\Stiven\\Desktop\\estudiantes.txt");
+                                        File file2 = new File("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
                                          // Si el archivo no existe, se crea!
                                          if (!file2.exists()) {
                                              file2.createNewFile();
@@ -713,10 +710,7 @@ public class TestAlmacen {
                                      }
           
                                     
-                                    //fin de escribir laboratoristas
-                        //estudiantes.add(estudiantex);
-                                    
-                                  //  Administrador.crearEstudiante(estudiantes, estudiantex); 
+                                    //fin de escribir laboratoristas 
                                     System.out.println("\nDesea Regresar: ");
                                     System.out.println("1. Si");
                                     System.out.println("2. No");
@@ -730,8 +724,8 @@ public class TestAlmacen {
                                     System.out.println("\nSeleccione el estudiante que desea editar: \n");
                                     Administrador.verEstudiantes(estudiantes);
                                     accion= leer.nextLine(); 
-                                    int confirmacion= Integer.parseInt(accion)-1; 
-                                    Administrador.editarEstudiante(estudiantes.get(confirmacion));
+                                    int confirmacion= Integer.parseInt(accion); 
+                                    Administrador.editarEstudiante(estudiantes.get(confirmacion-1));
                                     System.out.println("El estudiante ha sido editado exitosamente.");
                                     System.out.println("\nDesea Regresar: ");
                                     System.out.println("1. Si");
@@ -767,7 +761,7 @@ public class TestAlmacen {
                                     System.out.println("Codigo: ");
                                     String codigo = leer.nextLine();
                                     Equipo equipox= new Equipo(nombreEquipo, marca, codigo,"Bueno", "Disponible"); 
-                                    //Administrador.añadirEquipo(equipos, equipox);
+                                    Administrador.añadirEquipo(equipos, equipox);
                                     
                                     //aqui se escriben los equipos en el txt
                                     
@@ -783,7 +777,7 @@ public class TestAlmacen {
                                      try {
 
                                       //ojo cambiar
-                                        File file = new File("C:\\Users\\Stiven\\Desktop\\Laboratoristas.txt");
+                                        File file = new File("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt");
                                          // Si el archivo no existe, se crea!
                                          if (!file.exists()) {
                                              file.createNewFile();
@@ -875,7 +869,6 @@ public class TestAlmacen {
                 //**************************************************************
                 case "2":
                     while (y == 0) {
-                        System.out.println(laboratorista.getClave());
                         System.out.println("\tLABORATORISTA");
                         System.out.println("Usuario: ");
                         usuario = leer.nextLine();
