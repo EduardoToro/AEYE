@@ -3,6 +3,7 @@ package businessLogic;
 import data.Administrador;
 import data.Equipo;
 import data.Estudiante;
+import data.Inventario;
 import data.Laboratorista;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -23,6 +24,7 @@ public class TestAlmacen {
         Laboratorista laboratorista = new Laboratorista("Juan", "Montenegro", "2233", "xxxx");
         Equipo equipo= new Equipo("Multimetro", "Flux", "1010","Bueno", "Disponible"); 
         ArrayList<Laboratorista> laboratoristas= new ArrayList<>(); 
+        
         ArrayList<Estudiante> estudiantes= new ArrayList<>();
     	ArrayList<Equipo> equipos=new ArrayList<>(20);
         equipos.add(equipo);
@@ -211,12 +213,12 @@ public class TestAlmacen {
     	 Laboratorista laboratorista4=new Laboratorista("",null,null,null);
          Laboratorista laboratorista5=new Laboratorista("",null,null,null);
     	
-    	 laboratoristas.add(laboratorista1);
-    	 laboratoristas.add(laboratorista2);
-    	 laboratoristas.add(laboratorista3);
-    	 laboratoristas.add(laboratorista4);
-    	 laboratoristas.add(laboratorista5);
-    	
+    	 Administrador.laboratoristas.add(laboratorista1);
+    	 Administrador.laboratoristas.add(laboratorista2);
+    	 Administrador.laboratoristas.add(laboratorista3);
+    	 Administrador.laboratoristas.add(laboratorista4);
+    	 Administrador.laboratoristas.add(laboratorista5);
+    	Administrador.laboratoristas.addAll(laboratoristas);
          //Aqui termina la instanciación de los laboratoristas
          
          //contador para uso de txt de laboratoristas
@@ -515,8 +517,8 @@ public class TestAlmacen {
              
          
         //fin de mostrar estudiantes
-        
-         
+        Laboratorista.estudiante.addAll(estudiantes);
+        Inventario.equipos.addAll(equipos); 
         while (x == 0) {
             VentanaInicio vI= new VentanaInicio();
             vI.setVisible(true); 

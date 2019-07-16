@@ -11,7 +11,7 @@ import java.io.IOException;
 public  final class Administrador extends Persona {
     
     Scanner entrada= new Scanner(System.in); 
-    ArrayList<Laboratorista> laboratoristas= new ArrayList<>(); 
+    public static ArrayList<Laboratorista> laboratoristas= new ArrayList<>(); 
 
     public Administrador(String nombre, String apellido, String documento, String clave) {
         super(nombre, apellido, documento, clave);
