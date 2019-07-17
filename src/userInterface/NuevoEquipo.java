@@ -7,6 +7,8 @@ package userInterface;
 
 import data.Equipo;
 import data.Inventario;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 /**
  *
@@ -19,6 +21,13 @@ public class NuevoEquipo extends javax.swing.JFrame {
      */
     public NuevoEquipo() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        jLabel1.setHorizontalTextPosition (JLabel.CENTER);
+        jLabel1.setVerticalTextPosition (JLabel.CENTER);
+        setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
+    
+        
     }
 
     /**

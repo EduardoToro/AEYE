@@ -66,6 +66,11 @@ public class MenuAdministrador extends javax.swing.JFrame {
         btnCE.setBackground(new java.awt.Color(255, 0, 0));
         btnCE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnCE.setText("Nuevo Estudiante");
+        btnCE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCEActionPerformed(evt);
+            }
+        });
 
         btnEE.setBackground(new java.awt.Color(255, 0, 0));
         btnEE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -243,6 +248,13 @@ public class MenuAdministrador extends javax.swing.JFrame {
        ventanaA.setVisible(true);  
        dispose();
     }//GEN-LAST:event_btnCEquipoActionPerformed
+
+    private void btnCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCEActionPerformed
+        // TODO add your handling code here:
+       NuevoEstudiante ventanaA= new NuevoEstudiante(); 
+       ventanaA.setVisible(true);  
+       dispose();
+    }//GEN-LAST:event_btnCEActionPerformed
 
     /**
      * @param args the command line arguments
