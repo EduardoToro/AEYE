@@ -84,7 +84,7 @@ public class TestAlmacen {
         //Contar lineas
         long numeroLineas = 0;
         try {
-             //Ojo aqui se debe poner la ubicacuión del archivo:
+            //Ojo aqui se debe poner la ubicacuión del archivo:
             //C:\Users\Stiven\Desktop\\Datos.txt
             //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
             FileReader fr = new FileReader("src/datos/datos.txt");
@@ -101,7 +101,7 @@ public class TestAlmacen {
         }
         System.out.println("El fichero tiene " + numeroLineas + " lineas");
 
-         //Fin contar lineas
+        //Fin contar lineas
         File archivo = null;
         FileReader fr = null;
         BufferedReader br = null;
@@ -212,7 +212,7 @@ public class TestAlmacen {
         //Contar lineas
         long numeroLineas1 = 0;
         try {
-              //Ojo aqui se debe poner la ubicacuión del archivo:
+            //Ojo aqui se debe poner la ubicacuión del archivo:
             //C:\Users\Stiven\Desktop\\Laboratoristas.txt
             //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
             FileReader fr1 = new FileReader("src/datos/Laboratoristas.txt");
@@ -229,7 +229,7 @@ public class TestAlmacen {
         }
         System.out.println("El fichero tiene " + numeroLineas1 + " lineas");
 
-         //Fin contar lineas
+        //Fin contar lineas
         File archivo1 = null;
         FileReader fr1 = null;
         BufferedReader br1 = null;
@@ -364,7 +364,7 @@ public class TestAlmacen {
         //Contar lineas
         long numeroLineas2 = 0;
         try {
-             //Ojo aqui se debe poner la ubicacuión del archivo:
+            //Ojo aqui se debe poner la ubicacuión del archivo:
             //C:\Users\Stiven\Desktop\estudiantes.txt
             //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
             FileReader fr2 = new FileReader("src/datos/estudiantes.txt");
@@ -381,7 +381,7 @@ public class TestAlmacen {
         }
         System.out.println("El fichero tiene " + numeroLineas2 + " lineas");
 
-         //Fin contar lineas
+        //Fin contar lineas
         File archivo2 = null;
         FileReader fr2 = null;
         BufferedReader br2 = null;
@@ -542,7 +542,7 @@ public class TestAlmacen {
                                 Laboratorista laboratoristax = new Laboratorista(nombre, apellido, documento, clave);
                                 Administrador.crearLaboratorista(laboratoristas, laboratoristax);
 
-                                    //aqui se escriben los laboratoristas en el txt
+                                //aqui se escriben los laboratoristas en el txt
                                 int cantidadLaboratoristas = (int) (numeroLineas / 4);
                                 equipos.get(cantidadLaboratoristas + 1).setEquipo(laboratoristax.getNombre());
                                 equipos.get(cantidadLaboratoristas + 1).setMarca(laboratoristax.getApellido());
@@ -620,7 +620,7 @@ public class TestAlmacen {
                                 Administrador.crearEstudiante(estudiantes, estudiantex);
                                 estudiantes.add(estudiantex);
 
-                                    //aqui se escriben los estudiantes en el txt
+                                //aqui se escriben los estudiantes en el txt
                                 int cantidadEstudiantes = (int) (numeroLineas2 / 7);
                                 estudiantes.get(cantidadEstudiantes + 1).setNombre(estudiantex.getNombre());
                                 estudiantes.get(cantidadEstudiantes + 1).setApellido(estudiantex.getApellido());
@@ -733,7 +733,7 @@ public class TestAlmacen {
                                 Equipo equipox = new Equipo(nombreEquipo, marca, codigo, "Bueno", "Disponible");
                                 Administrador.añadirEquipo(equipos, equipox);
 
-                                    //aqui se escriben los equipos en el txt
+                                //aqui se escriben los equipos en el txt
                                 int catidadEquipos = (int) (numeroLineas / 4);
                                 equipos.get(catidadEquipos + 1).setEquipo(equipox.getEquipo());
                                 equipos.get(catidadEquipos + 1).setMarca(equipox.getMarca());

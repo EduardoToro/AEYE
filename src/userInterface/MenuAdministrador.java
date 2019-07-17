@@ -21,8 +21,8 @@ public class MenuAdministrador extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        jLabel2.setHorizontalTextPosition (JLabel.CENTER);
-        jLabel2.setVerticalTextPosition (JLabel.CENTER);
+        jLabel2.setHorizontalTextPosition(JLabel.CENTER);
+        jLabel2.setVerticalTextPosition(JLabel.CENTER);
         setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
     }
 
@@ -62,6 +62,11 @@ public class MenuAdministrador extends javax.swing.JFrame {
         btnCL.setBackground(new java.awt.Color(255, 0, 0));
         btnCL.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnCL.setText("Nuevo Laboratorista");
+        btnCL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCLActionPerformed(evt);
+            }
+        });
 
         btnCE.setBackground(new java.awt.Color(255, 0, 0));
         btnCE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -226,35 +231,42 @@ public class MenuAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnElEActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        VentanaInicio ventanaI= new VentanaInicio();
+        VentanaInicio ventanaI = new VentanaInicio();
         ventanaI.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnLEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLEquiposActionPerformed
-        ListaEquipos2 lE= new ListaEquipos2(); 
+        ListaEquipos2 lE = new ListaEquipos2();
         lE.setVisible(true);
-        dispose(); 
+        dispose();
     }//GEN-LAST:event_btnLEquiposActionPerformed
 
     private void btnListaEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListaEActionPerformed
-        ListaEstudiantes listaEst= new ListaEstudiantes(); 
+        ListaEstudiantes listaEst = new ListaEstudiantes();
         listaEst.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnListaEActionPerformed
 
     private void btnCEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCEquipoActionPerformed
-       NuevoEquipo ventanaA= new NuevoEquipo(); 
-       ventanaA.setVisible(true);  
-       dispose();
+        NuevoEquipo ventanaA = new NuevoEquipo();
+        ventanaA.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnCEquipoActionPerformed
 
     private void btnCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCEActionPerformed
         // TODO add your handling code here:
-       NuevoEstudiante ventanaA= new NuevoEstudiante(); 
-       ventanaA.setVisible(true);  
-       dispose();
+        NuevoEstudiante ventanaA = new NuevoEstudiante();
+        ventanaA.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnCEActionPerformed
+
+    private void btnCLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCLActionPerformed
+        // TODO add your handling code here:
+        NuevoLaboratorista ventanaA = new NuevoLaboratorista();
+        ventanaA.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnCLActionPerformed
 
     /**
      * @param args the command line arguments
