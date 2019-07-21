@@ -14,6 +14,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import userInterface.EliminarEstudiante;
 import userInterface.ListaEquipos;
 import userInterface.ListaEquipos2;
 import userInterface.ListaEstudiantes;
@@ -488,6 +489,7 @@ public class TestAlmacen {
         new ListaEquipos().observarDatos();
         new ListaEstudiantes().mostrarEstudiante();
         new ListaLaboratorista().mostrarLaboratorista();
+        new EliminarEstudiante().mostrarEstudiante();
         while (x == 0) {
             VentanaInicio vI = new VentanaInicio();
             vI.setVisible(true);

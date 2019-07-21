@@ -278,7 +278,6 @@ public class NuevoEquipo extends javax.swing.JFrame {
             this.txtCodigo.setText("");
             this.txtEstado.setText("");
             this.txtDisponibilidad.setText(""); 
-            
         }
     /**
      * @param args the command line arguments

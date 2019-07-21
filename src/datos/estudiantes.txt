@@ -4,39 +4,39 @@ Bernal
 3333
 Ing. Mecanica
 9
-X
+No
 Pedro
 Fernandez
 1110
 9999
 Ing. Civil
 10
-X
+No
 Andres
 Ochoa
 1099
 1120
 Ing. Sistemas
 11
-X
+No
 Pedro
 Mendieta
 1010
 2002
 Ing. Industrial
 8
-X
+No
 Steven
 Casas
 2222
 3141
 Ing. Mecanica
 9
-X
+No
 Juan
 Botero
 1848
 Juanse
 Ing. Civil
 9
-X
+No

@@ -284,7 +284,9 @@ public class MenuAdministrador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnElEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElEActionPerformed
-        // TODO add your handling code here:
+        EliminarEstudiante eE= new EliminarEstudiante(); 
+        eE.setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnElEActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed

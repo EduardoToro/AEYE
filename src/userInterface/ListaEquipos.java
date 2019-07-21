@@ -28,17 +28,35 @@ public class ListaEquipos extends javax.swing.JFrame {
             }
             this.tblDatosEquipos1.setModel(modelo);  
         }
+     
+    private void buscarDatos(String buscar){
+            String[] titulos= {"EQUIPO","MARCA","CÓDIGO","ESTADO","DISPONIBILIDAD"};
+            String[] registro= new String[5]; 
+            modelo= new DefaultTableModel(null, titulos); 
+            if(buscar.equals(" ") || buscar.equals(" ")){
+            for(Equipo ft: Inventario.equipos){
+                registro[0]= ft.getEquipo(); 
+                registro[1]= ft.getMarca(); 
+                registro[2]= ft.getCodigo(); 
+                registro[3]= ft.getEstado();  
+                registro[4]= ft.getDisposicion(); 
+                modelo.addRow(registro);
+            }
+            this.tblDatosEquipos1.setModel(modelo);
+        }
+    }
     /**
      * Creates new form ListaEquipos
      */
     public ListaEquipos() {
         initComponents();
         observarDatos(); 
+        buscarDatos(""); 
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
     }
-
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -88,6 +106,11 @@ public class ListaEquipos extends javax.swing.JFrame {
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
+            }
+        });
+        btnBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnBuscarKeyPressed(evt);
             }
         });
 
@@ -162,7 +185,9 @@ public class ListaEquipos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        
+        buscarTexto= txtBuscar.getText();
+        observarDatos(); 
+        buscarDatos(buscarTexto); 
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
@@ -170,6 +195,10 @@ public class ListaEquipos extends javax.swing.JFrame {
         ml.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnBuscarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnBuscarKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscarKeyPressed
 
     /**
      * @param args the command line arguments
