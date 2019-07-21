@@ -57,6 +57,11 @@ public class MenuLaboratorista extends javax.swing.JFrame {
         btnRE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnRE.setForeground(new java.awt.Color(255, 255, 255));
         btnRE.setText("Recibir Equipo");
+        btnRE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnREActionPerformed(evt);
+            }
+        });
 
         btnEE.setBackground(new java.awt.Color(255, 0, 0));
         btnEE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -145,10 +150,17 @@ public class MenuLaboratorista extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnLEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLEActionPerformed
-        ListaEquipos2 le= new ListaEquipos2(); 
+        ListaEquipos3 le= new ListaEquipos3(); 
         le.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnLEActionPerformed
+
+    private void btnREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnREActionPerformed
+        // TODO add your handling code here:
+        ListaEquipos4 m = new ListaEquipos4 ();
+        m.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnREActionPerformed
 
     /**
      * @param args the command line arguments

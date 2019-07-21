@@ -2,7 +2,7 @@ Multimetro
 Fluke
 001
 Bueno
-Disponible
+Prestado
 Osciloscopio
 Tektronic
 002
@@ -17,7 +17,7 @@ Voltimetro
 Apexi
 004
 Bueno
-Disponible
+Prestado
 Puente de impedancias
 Wheatstone
 005
