@@ -5,7 +5,7 @@ Bueno
 Disponible
 Osciloscopio
 Tektronic
-O02
+002
 Bueno
 Disponible
 Generador de señales

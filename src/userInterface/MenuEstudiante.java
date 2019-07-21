@@ -52,6 +52,11 @@ public class MenuEstudiante extends javax.swing.JFrame {
         btnSolicitar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnSolicitar.setForeground(new java.awt.Color(255, 255, 255));
         btnSolicitar.setText("Solicitar Equipo");
+        btnSolicitar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSolicitarActionPerformed(evt);
+            }
+        });
 
         btnRegresar.setBackground(new java.awt.Color(255, 0, 0));
         btnRegresar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -118,6 +123,14 @@ public class MenuEstudiante extends javax.swing.JFrame {
         ventanaI.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnSolicitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarActionPerformed
+        // TODO add your handling code here:
+        ListaEquipos2 lE = new ListaEquipos2();
+        lE.setVisible(true);
+        dispose();
+    
+    }//GEN-LAST:event_btnSolicitarActionPerformed
 
     /**
      * @param args the command line arguments

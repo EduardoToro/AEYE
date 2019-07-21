@@ -10,6 +10,7 @@ import data.Inventario;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,31 +18,32 @@ import javax.swing.table.DefaultTableModel;
  * @author Eduar
  */
 public class ListaEquipos2 extends javax.swing.JFrame {
-    
+
     DefaultTableModel modelo;
     String buscarTexto;
-    
-    public void mostrarDatos(){
-            String[] titulos= {"EQUIPO","MARCA","CÓDIGO","ESTADO","DISPONIBILIDAD"};
-            String[] registro= new String[5]; 
-            modelo= new DefaultTableModel(null, titulos); 
-                for(Equipo ft: Inventario.equipos){      
-                
-                registro[0]= ft.getEquipo(); 
-                registro[1]= ft.getMarca(); 
-                registro[2]= ft.getCodigo(); 
-                registro[3]= ft.getEstado();  
-                registro[4]= ft.getDisposicion(); 
-                modelo.addRow(registro);    
-            }
-            this.tblDatosEquipos.setModel(modelo);  
+
+    public void mostrarDatos() {
+        String[] titulos = {"EQUIPO", "MARCA", "CÓDIGO", "ESTADO", "DISPONIBILIDAD"};
+        String[] registro = new String[5];
+        modelo = new DefaultTableModel(null, titulos);
+        for (Equipo ft : Inventario.equipos) {
+
+            registro[0] = ft.getEquipo();
+            registro[1] = ft.getMarca();
+            registro[2] = ft.getCodigo();
+            registro[3] = ft.getEstado();
+            registro[4] = ft.getDisposicion();
+            modelo.addRow(registro);
         }
+        this.tblDatosEquipos.setModel(modelo);
+    }
+
     /**
      * Creates new form ListaEquipos
      */
     public ListaEquipos2() {
         initComponents();
-        mostrarDatos(); 
+        mostrarDatos();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
@@ -63,6 +65,8 @@ public class ListaEquipos2 extends javax.swing.JFrame {
         btnBuscar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
+        txtPrestar = new javax.swing.JTextField();
+        btnPrestar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Almacén De Equipos Eléctricos Y Electrónicos");
@@ -81,6 +85,11 @@ public class ListaEquipos2 extends javax.swing.JFrame {
 
             }
         ));
+        tblDatosEquipos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblDatosEquiposMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblDatosEquipos);
 
         txtBuscar.setBackground(new java.awt.Color(153, 153, 153));
@@ -111,6 +120,21 @@ public class ListaEquipos2 extends javax.swing.JFrame {
             }
         });
 
+        txtPrestar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        txtPrestar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPrestarActionPerformed(evt);
+            }
+        });
+
+        btnPrestar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnPrestar.setText("Prestar");
+        btnPrestar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrestarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -118,19 +142,26 @@ public class ListaEquipos2 extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtPrestar, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPrestar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(192, 192, 192))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnBuscar))
-                            .addComponent(jLabel1))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnRegresar)
-                .addContainerGap())
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(btnBuscar))
+                                    .addComponent(jLabel1))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(btnRegresar)))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,7 +174,11 @@ public class ListaEquipos2 extends javax.swing.JFrame {
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPrestar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPrestar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                 .addComponent(btnRegresar)
                 .addContainerGap())
         );
@@ -169,14 +204,48 @@ public class ListaEquipos2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        
+
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        MenuLaboratorista ml= new MenuLaboratorista(); 
+        MenuEstudiante ml = new MenuEstudiante();
         ml.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void txtPrestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrestarActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_txtPrestarActionPerformed
+
+    private void btnPrestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrestarActionPerformed
+        // TODO add your handling code here:
+        int k = 0;
+        String prestar = txtPrestar.getText();
+        for (int i = 0; i < Inventario.equipos.size(); i++) {
+            if (prestar.equals(Inventario.equipos.get(i).getCodigo())) {
+                Inventario.equipos.get(i).setDisposicion("Prestado");
+                k = i+5;
+                JOptionPane.showMessageDialog(this, "Equipo prestado",
+                        "Función", JOptionPane.INFORMATION_MESSAGE);
+                
+            }
+        }
+       
+        if (k == 0) {
+            JOptionPane.showMessageDialog(this, "El equipo no existe",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+         ListaEquipos2 ventanaI = new ListaEquipos2();
+                ventanaI.setVisible(true);
+                dispose();
+    }//GEN-LAST:event_btnPrestarActionPerformed
+
+    private void tblDatosEquiposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDatosEquiposMouseClicked
+        // TODO add your handling code here:
+        int seleccion=tblDatosEquipos.rowAtPoint(evt.getPoint());
+        txtPrestar.setText(String.valueOf(tblDatosEquipos.getValueAt(seleccion,2)));
+    }//GEN-LAST:event_tblDatosEquiposMouseClicked
 
     /**
      * @param args the command line arguments
@@ -216,11 +285,13 @@ public class ListaEquipos2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnPrestar;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblDatosEquipos;
     private javax.swing.JTextField txtBuscar;
+    private javax.swing.JTextField txtPrestar;
     // End of variables declaration//GEN-END:variables
 }
