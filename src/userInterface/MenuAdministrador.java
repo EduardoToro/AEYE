@@ -39,7 +39,6 @@ public class MenuAdministrador extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnCL = new javax.swing.JButton();
         btnCE = new javax.swing.JButton();
-        btnEE = new javax.swing.JButton();
         btnElE = new javax.swing.JButton();
         btnCEquipo = new javax.swing.JButton();
         btnLL = new javax.swing.JButton();
@@ -54,6 +53,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        btnEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Almacén De Equipos Eléctricos Y Electrónicos");
@@ -83,11 +83,6 @@ public class MenuAdministrador extends javax.swing.JFrame {
                 btnCEActionPerformed(evt);
             }
         });
-
-        btnEE.setBackground(new java.awt.Color(255, 0, 0));
-        btnEE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        btnEE.setForeground(new java.awt.Color(255, 255, 255));
-        btnEE.setText("Editar Estudiante");
 
         btnElE.setBackground(new java.awt.Color(255, 0, 0));
         btnElE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -165,6 +160,16 @@ public class MenuAdministrador extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/portapapeles.png"))); // NOI18N
 
+        btnEditar.setBackground(new java.awt.Color(255, 0, 0));
+        btnEditar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnEditar.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditar.setText("Editar Estudiante");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -210,8 +215,8 @@ public class MenuAdministrador extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnListaE, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnEE, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnElE, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(btnElE, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(153, 153, 153))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -247,7 +252,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnEE)
+                                .addComponent(btnEditar)
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btnElE)
@@ -333,6 +338,13 @@ public class MenuAdministrador extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnLLActionPerformed
 
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        // TODO add your handling code here:
+         ListaEstudiantes1 listaL= new ListaEstudiantes1(); 
+        listaL.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnEditarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -373,7 +385,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton btnCE;
     private javax.swing.JButton btnCEquipo;
     private javax.swing.JButton btnCL;
-    private javax.swing.JButton btnEE;
+    private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnElE;
     private javax.swing.JButton btnLEquipos;
     private javax.swing.JButton btnLL;

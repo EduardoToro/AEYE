@@ -4,6 +4,7 @@ package userInterface;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.event.KeyEvent;
 import java.security.Principal;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -106,6 +107,11 @@ public class VentanaSesionA extends javax.swing.JFrame {
                 btnRegresarActionPerformed(evt);
             }
         });
+        btnRegresar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnRegresarKeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -203,6 +209,25 @@ public class VentanaSesionA extends javax.swing.JFrame {
         ventanaI.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnRegresarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnRegresarKeyPressed
+                                             
+        // TODO add your handling code here:
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+             String usuario="Milena"; 
+        String clave="MileD"; 
+        String passw= new String (txtClave.getPassword()); 
+        if(txtUsuario.getText().equals(usuario) && passw.equals(clave)){
+                MenuAdministrador ventanaA= new MenuAdministrador(); 
+                ventanaA.setVisible(true);  
+                dispose();
+        }else{
+            JOptionPane.showMessageDialog(this, "Usuario y/o Contraseña Incorrecto\nIntentelo Nuevamente",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        }
+                     
+    }//GEN-LAST:event_btnRegresarKeyPressed
 
     /**
      * @param args the command line arguments
