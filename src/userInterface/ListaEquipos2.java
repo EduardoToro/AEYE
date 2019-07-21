@@ -5,7 +5,6 @@
  */
 package userInterface;
 
-import data.Administrador;
 import data.Equipo;
 import data.Inventario;
 import java.util.ArrayList;
@@ -18,34 +17,31 @@ import javax.swing.table.DefaultTableModel;
  * @author Eduar
  */
 public class ListaEquipos2 extends javax.swing.JFrame {
+    
     DefaultTableModel modelo;
-    Equipo equipo1= new Equipo("Multimetro", "Flux", "1010","Bueno", "Disponible");
-    String buscarTexto; 
+    String buscarTexto;
     
-    
-     private void cargarDatos(String buscar){
-            Inventario.equipos.add(equipo1);
-            String[] titulos= {"Equipo","Marca","Codigo","Estado", "Disponibilidad"};
+    public void mostrarDatos(){
+            String[] titulos= {"EQUIPO","MARCA","CÓDIGO","ESTADO","DISPONIBILIDAD"};
             String[] registro= new String[5]; 
-            modelo= new DefaultTableModel(null, titulos);
-                for(Equipo equipo: Inventario.equipos){ 
-                if(equipo.getEquipo().contains(buscar)){
-                registro[0]= equipo.getEquipo(); 
-                registro[1]= equipo.getMarca(); 
-                registro[2]= equipo.getCodigo(); 
-                registro[3]= equipo.getEstado();
-                registro[4]= equipo.getDisposicion();
-                modelo.addRow(registro);
-                }
+            modelo= new DefaultTableModel(null, titulos); 
+                for(Equipo ft: Inventario.equipos){      
+                
+                registro[0]= ft.getEquipo(); 
+                registro[1]= ft.getMarca(); 
+                registro[2]= ft.getCodigo(); 
+                registro[3]= ft.getEstado();  
+                registro[4]= ft.getDisposicion(); 
+                modelo.addRow(registro);    
             }
-            this.tblDatosEquipos.setModel(modelo);            
+            this.tblDatosEquipos.setModel(modelo);  
         }
     /**
      * Creates new form ListaEquipos
      */
     public ListaEquipos2() {
         initComponents();
-        cargarDatos(""); 
+        mostrarDatos(); 
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
@@ -76,21 +72,21 @@ public class ListaEquipos2 extends javax.swing.JFrame {
 
         tblDatosEquipos.setBackground(new java.awt.Color(255, 0, 0));
         tblDatosEquipos.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        tblDatosEquipos.setForeground(new java.awt.Color(255, 255, 255));
         tblDatosEquipos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(tblDatosEquipos);
 
-        txtBuscar.setBackground(new java.awt.Color(204, 204, 204));
+        txtBuscar.setBackground(new java.awt.Color(153, 153, 153));
         txtBuscar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        txtBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        txtBuscar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 153, 0)));
 
         btnBuscar.setBackground(new java.awt.Color(255, 0, 0));
@@ -107,6 +103,7 @@ public class ListaEquipos2 extends javax.swing.JFrame {
 
         btnRegresar.setBackground(new java.awt.Color(255, 0, 0));
         btnRegresar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,12 +169,11 @@ public class ListaEquipos2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        buscarTexto= txtBuscar.getText(); 
-        cargarDatos(buscarTexto);
+        
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        MenuAdministrador ml= new MenuAdministrador(); 
+        MenuLaboratorista ml= new MenuLaboratorista(); 
         ml.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed

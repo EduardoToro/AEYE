@@ -97,7 +97,7 @@ public final class Administrador extends Persona {
             //Ojo aqui se debe poner la ubicacuión del archivo:
             //C:\Users\Stiven\Desktop
             //C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Equipos.txt
-            FileReader fr2 = new FileReader("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
+            FileReader fr2 = new FileReader("src/datos/Estudiantes.txt");
             BufferedReader bf2 = new BufferedReader(fr2);
 
             String cadena2;
@@ -120,7 +120,7 @@ public final class Administrador extends Persona {
             // Apertura del fichero y creacion de BufferedReader para poder
             // hacer una lectura comoda (disponer del metodo readLine()).
             //Ojo aqui se debe poner la ubicacuión del archivo:
-            archivo2 = new File("C:\\Users\\Eduar\\OneDrive\\Escritorio\\AEYE\\Estudiantes.txt");
+            archivo2 = new File("src/datos/Estudiantes.txt");
             fr2 = new FileReader(archivo2);
             br2 = new BufferedReader(fr2);
 
@@ -141,7 +141,7 @@ public final class Administrador extends Persona {
                     estudiantes.get(contador4).setClave(guardador2.get(3));
                     estudiantes.get(contador4).setCarrera(guardador2.get(4));
                     estudiantes.get(contador4).setSemestre(guardador2.get(5));
-                    estudiantes.get(contador4).setSancion(Boolean.valueOf(guardador2.get(6)));
+                    estudiantes.get(contador4).setSancion(guardador2.get(6));
                     guardador2.clear();
                     contador4++;
                     contador5 = 0;
@@ -200,7 +200,7 @@ public final class Administrador extends Persona {
             for (int k = 0; k < (15 - estudiantes.get(i).getSemestre().length()); k++) {
                 System.out.print(" ");
             }
-            System.out.println("    " + String.valueOf(estudiantes.get(i).isSancion()) + "    |");
+            System.out.println("    " + String.valueOf(estudiantes.get(i).getSancion()) + "    |");
 
         }
         System.out.println("");

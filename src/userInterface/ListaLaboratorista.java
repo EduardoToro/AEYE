@@ -1,55 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package userInterface;
 
 import data.Administrador;
-import data.Equipo;
 import data.Estudiante;
-import data.Inventario;
 import data.Laboratorista;
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
+public class ListaLaboratorista extends javax.swing.JFrame {
 
-/**
- *
- * @author Eduar
- */
-public class ListaEstudiantes extends javax.swing.JFrame {
-    
     DefaultTableModel modelo;
     String buscarTexto;
     
-    public void mostrarEstudiante(){
-            String[] titulos= {"NOMBRE","APELLIDO","DOCUMENTO","CLAVE","CARRERA","SEMESTRE","SANCION"};
-            String[] registro= new String[7]; 
+    public void mostrarLaboratorista(){
+            String[] titulos= {"NOMBRE","APELLIDO","DOCUMENTO","CLAVE"};
+            String[] registro= new String[4]; 
             modelo= new DefaultTableModel(null, titulos); 
-                for(Estudiante ft: Laboratorista.estudiantes){      
-                
+                for(Laboratorista ft: Administrador.laboratoristas){      
                 registro[0]= ft.getNombre(); 
                 registro[1]= ft.getApellido(); 
                 registro[2]= ft.getDocumento(); 
                 registro[3]= ft.getClave();  
-                registro[4]= ft.getCarrera(); 
-                registro[5]= ft.getSemestre();
-                registro[6]= ft.getSancion();
                 modelo.addRow(registro);    
             }
-            this.tblDatosEst.setModel(modelo);  
+            this.tblDatosLaboratoristas.setModel(modelo);  
         }
-    
     /**
-     * Creates new form ListaEstudiantes
+     * Creates new form ListaLaboratorista
      */
-    public ListaEstudiantes() {
+    public ListaLaboratorista() {
         initComponents();
-        mostrarEstudiante(); 
+        mostrarLaboratorista(); 
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
-       
     }
 
     /**
@@ -66,38 +48,35 @@ public class ListaEstudiantes extends javax.swing.JFrame {
         txtBuscar = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblDatosEst = new javax.swing.JTable();
+        tblDatosLaboratoristas = new javax.swing.JTable();
         btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Almacén De Equipos Eléctricos Y Electrónicos");
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista De Estudiantes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Trebuchet MS", 0, 18))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista De Laboratoristas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Trebuchet MS", 0, 18))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Estudiante");
+        jLabel1.setText("Laboratorista");
+        jLabel1.setToolTipText("");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         txtBuscar.setBackground(new java.awt.Color(153, 153, 153));
         txtBuscar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         txtBuscar.setForeground(new java.awt.Color(255, 255, 255));
         txtBuscar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtBuscar.setToolTipText("");
         txtBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 153, 0)));
 
         btnBuscar.setBackground(new java.awt.Color(255, 0, 0));
-        btnBuscar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/lupa-herramienta.png"))); // NOI18N
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
-            }
-        });
 
-        tblDatosEst.setBackground(new java.awt.Color(255, 0, 0));
-        tblDatosEst.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
-        tblDatosEst.setForeground(new java.awt.Color(255, 255, 255));
-        tblDatosEst.setModel(new javax.swing.table.DefaultTableModel(
+        tblDatosLaboratoristas.setBackground(new java.awt.Color(255, 0, 0));
+        tblDatosLaboratoristas.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        tblDatosLaboratoristas.setForeground(new java.awt.Color(255, 255, 255));
+        tblDatosLaboratoristas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -105,13 +84,12 @@ public class ListaEstudiantes extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(tblDatosEst);
+        jScrollPane1.setViewportView(tblDatosLaboratoristas);
 
         btnRegresar.setBackground(new java.awt.Color(255, 0, 0));
         btnRegresar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegresar.setText("Regresar");
-        btnRegresar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegresarActionPerformed(evt);
@@ -125,32 +103,30 @@ public class ListaEstudiantes extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
+                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(45, 45, 45)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(txtBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
-                .addGap(21, 21, 21)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -175,10 +151,6 @@ public class ListaEstudiantes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-                 
-    }//GEN-LAST:event_btnBuscarActionPerformed
-
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         MenuAdministrador mA= new MenuAdministrador(); 
         mA.setVisible(true);
@@ -202,20 +174,20 @@ public class ListaEstudiantes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListaEstudiantes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaLaboratorista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListaEstudiantes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaLaboratorista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListaEstudiantes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaLaboratorista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListaEstudiantes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListaLaboratorista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListaEstudiantes().setVisible(true);
+                new ListaLaboratorista().setVisible(true);
             }
         });
     }
@@ -226,7 +198,7 @@ public class ListaEstudiantes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblDatosEst;
+    private javax.swing.JTable tblDatosLaboratoristas;
     private javax.swing.JTextField txtBuscar;
     // End of variables declaration//GEN-END:variables
 }

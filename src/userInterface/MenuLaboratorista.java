@@ -45,6 +45,7 @@ public class MenuLaboratorista extends javax.swing.JFrame {
 
         btnLE.setBackground(new java.awt.Color(255, 0, 0));
         btnLE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnLE.setForeground(new java.awt.Color(255, 255, 255));
         btnLE.setText("Lista Equipos");
         btnLE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -54,18 +55,22 @@ public class MenuLaboratorista extends javax.swing.JFrame {
 
         btnRE.setBackground(new java.awt.Color(255, 0, 0));
         btnRE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnRE.setForeground(new java.awt.Color(255, 255, 255));
         btnRE.setText("Recibir Equipo");
 
         btnEE.setBackground(new java.awt.Color(255, 0, 0));
         btnEE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnEE.setForeground(new java.awt.Color(255, 255, 255));
         btnEE.setText("Editar Equipo");
 
         btnElE.setBackground(new java.awt.Color(255, 0, 0));
         btnElE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnElE.setForeground(new java.awt.Color(255, 255, 255));
         btnElE.setText("Eliminar Equipo");
 
         btnRegresar.setBackground(new java.awt.Color(255, 0, 0));
         btnRegresar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,7 +145,7 @@ public class MenuLaboratorista extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegresarActionPerformed
 
     private void btnLEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLEActionPerformed
-        ListaEquipos le= new ListaEquipos(); 
+        ListaEquipos2 le= new ListaEquipos2(); 
         le.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnLEActionPerformed

@@ -50,10 +50,12 @@ public class MenuEstudiante extends javax.swing.JFrame {
 
         btnSolicitar.setBackground(new java.awt.Color(255, 0, 0));
         btnSolicitar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnSolicitar.setForeground(new java.awt.Color(255, 255, 255));
         btnSolicitar.setText("Solicitar Equipo");
 
         btnRegresar.setBackground(new java.awt.Color(255, 0, 0));
         btnRegresar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

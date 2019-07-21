@@ -14,6 +14,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import userInterface.ListaEquipos;
+import userInterface.ListaEquipos2;
+import userInterface.ListaEstudiantes;
+import userInterface.ListaLaboratorista;
 import userInterface.VentanaInicio;
 import userInterface.VentanaSesionL;
 
@@ -24,11 +28,9 @@ public class TestAlmacen {
         Laboratorista laboratorista = new Laboratorista("Juan", "Montenegro", "2233", "xxxx");
         Equipo equipo = new Equipo("Multimetro", "Flux", "1010", "Bueno", "Disponible");
         ArrayList<Laboratorista> laboratoristas = new ArrayList<>();
-
         ArrayList<Estudiante> estudiantes = new ArrayList<>();
         ArrayList<Equipo> equipos = new ArrayList<>(20);
         equipos.add(equipo);
-
         laboratoristas.add(laboratorista);
         Scanner leer = new Scanner(System.in);
         int x = 0, y = 0, z = 0;
@@ -44,17 +46,17 @@ public class TestAlmacen {
         Equipo equipo7 = new Equipo(null, null, null, null, null);
         Equipo equipo8 = new Equipo(null, null, null, null, null);
         Equipo equipo9 = new Equipo(null, null, null, null, null);
-        Equipo equipo10 = new Equipo("", null, null, null, null);
-        Equipo equipo11 = new Equipo("", null, null, null, null);
-        Equipo equipo12 = new Equipo("", null, null, null, null);
-        Equipo equipo13 = new Equipo("", null, null, null, null);
-        Equipo equipo14 = new Equipo("", null, null, null, null);
-        Equipo equipo15 = new Equipo("", null, null, null, null);
-        Equipo equipo16 = new Equipo("", null, null, null, null);
-        Equipo equipo17 = new Equipo("", null, null, null, null);
-        Equipo equipo18 = new Equipo("", null, null, null, null);
-        Equipo equipo19 = new Equipo("", null, null, null, null);
-        Equipo equipo20 = new Equipo("", null, null, null, null);
+        Equipo equipo10 = new Equipo(null, null, null, null, null);
+        Equipo equipo11 = new Equipo(null, null, null, null, null);
+        Equipo equipo12 = new Equipo(null, null, null, null, null);
+        Equipo equipo13 = new Equipo(null, null, null, null, null);
+        Equipo equipo14 = new Equipo(null, null, null, null, null);
+        Equipo equipo15 = new Equipo(null, null, null, null, null);
+        Equipo equipo16 = new Equipo(null, null, null, null, null);
+        Equipo equipo17 = new Equipo(null, null, null, null, null);
+        Equipo equipo18 = new Equipo(null, null, null, null, null);
+        Equipo equipo19 = new Equipo(null, null, null, null, null);
+        Equipo equipo20 = new Equipo(null, null, null, null, null);
         equipos.add(equipo1);
         equipos.add(equipo2);
         equipos.add(equipo3);
@@ -197,12 +199,12 @@ public class TestAlmacen {
         Laboratorista laboratorista4 = new Laboratorista("", null, null, null);
         Laboratorista laboratorista5 = new Laboratorista("", null, null, null);
 
-        Administrador.laboratoristas.add(laboratorista1);
-        Administrador.laboratoristas.add(laboratorista2);
-        Administrador.laboratoristas.add(laboratorista3);
-        Administrador.laboratoristas.add(laboratorista4);
-        Administrador.laboratoristas.add(laboratorista5);
-        Administrador.laboratoristas.addAll(laboratoristas);
+        laboratoristas.add(laboratorista1);
+        laboratoristas.add(laboratorista2);
+        laboratoristas.add(laboratorista3);
+        laboratoristas.add(laboratorista4);
+        laboratoristas.add(laboratorista5);
+        
          //Aqui termina la instanciación de los laboratoristas
 
         //contador para uso de txt de laboratoristas
@@ -255,10 +257,10 @@ public class TestAlmacen {
 
                 if (contador3 == 4) {
 
-                    Administrador.laboratoristas.get(contador2).setNombre(guardador1.get(0));
-                    Administrador.laboratoristas.get(contador2).setApellido(guardador1.get(1));
-                    Administrador.laboratoristas.get(contador2).setDocumento(guardador1.get(2));
-                    Administrador.laboratoristas.get(contador2).setClave(guardador1.get(3));
+                    laboratoristas.get(contador2).setNombre(guardador1.get(0));
+                    laboratoristas.get(contador2).setApellido(guardador1.get(1));
+                    laboratoristas.get(contador2).setDocumento(guardador1.get(2));
+                    laboratoristas.get(contador2).setClave(guardador1.get(3));
 
                     guardador1.clear();
                     contador2++;
@@ -287,53 +289,53 @@ public class TestAlmacen {
         System.out.println("-------------------------------------------------------------------------------------");
         System.out.println("      |Nombre                        |Apellido       |Documento      |Clave       | ");
         for (int i = 0; i < numeroLineas1 / 4; i++) {
-            int masa = Administrador.laboratoristas.get(i).getNombre().length();
+            int masa = laboratoristas.get(i).getNombre().length();
             System.out.print("|" + (i + 1) + ". ");
             if ((i + 1) >= 10) {
                 System.out.print(" ");
             } else {
                 System.out.print("  ");
             }
-            System.out.print("|" + Administrador.laboratoristas.get(i).getNombre());
+            System.out.print("|" + laboratoristas.get(i).getNombre());
             for (int k = 0; k < (30 - masa); k++) {
                 System.out.print(" ");
             }
-            System.out.print("|" + Administrador.laboratoristas.get(i).getApellido());
-            for (int k = 0; k < (15 - Administrador.laboratoristas.get(i).getApellido().length()); k++) {
+            System.out.print("|" +laboratoristas.get(i).getApellido());
+            for (int k = 0; k < (15 - laboratoristas.get(i).getApellido().length()); k++) {
                 System.out.print(" ");
             }
-            System.out.print("|" + Administrador.laboratoristas.get(i).getDocumento());
-            for (int k = 0; k < (15 - Administrador.laboratoristas.get(i).getDocumento().length()); k++) {
+            System.out.print("|" + laboratoristas.get(i).getDocumento());
+            for (int k = 0; k < (15 - laboratoristas.get(i).getDocumento().length()); k++) {
                 System.out.print(" ");
             }
-            System.out.println("|    " + Administrador.laboratoristas.get(i).getClave() + "    |");
+            System.out.println("|    " + laboratoristas.get(i).getClave() + "    |");
         }
         System.out.println("");
 
         //fin de mostrar laboratoristas
         //**********************************************************************
         //En esta parte instancio todos los estudiantes para después crearlos y leerlos
-        Estudiante estudiante = new Estudiante("Eduardo", "Toro", "3344", "Edu23", "Ing. Electronica", "2", false);
-        Estudiante estudiante1 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante2 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante3 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante4 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante5 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante6 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante7 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante8 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante9 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante10 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante11 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante12 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante13 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante14 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante15 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante16 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante17 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante18 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante19 = new Estudiante(null, null, null, null, null, null, false);
-        Estudiante estudiante20 = new Estudiante(null, null, null, null, null, null, false);
+        Estudiante estudiante = new Estudiante("Eduardo", "Toro", "3344", "Edu23", "Ing. Electronica", "2", "No tiene sancion");
+        Estudiante estudiante1 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante2 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante3 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante4 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante5 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante6 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante7 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante8 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante9 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante10 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante11 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante12 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante13 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante14 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante15 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante16 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante17 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante18 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante19 = new Estudiante(null, null, null, null, null, null, null);
+        Estudiante estudiante20 = new Estudiante(null, null, null, null, null, null, null);
         estudiantes.add(estudiante);
         estudiantes.add(estudiante1);
         estudiantes.add(estudiante2);
@@ -413,7 +415,7 @@ public class TestAlmacen {
                     estudiantes.get(contador4).setClave(guardador2.get(3));
                     estudiantes.get(contador4).setCarrera(guardador2.get(4));
                     estudiantes.get(contador4).setSemestre(guardador2.get(5));
-                    estudiantes.get(contador4).setSancion(Boolean.valueOf(guardador2.get(6)));
+                    estudiantes.get(contador4).setSancion(guardador2.get(6));
                     guardador2.clear();
                     contador4++;
                     contador5 = 0;
@@ -473,7 +475,7 @@ public class TestAlmacen {
             for (int k = 0; k < (15 - estudiantes.get(i).getSemestre().length()); k++) {
                 System.out.print(" ");
             }
-            System.out.println("    " + String.valueOf(estudiantes.get(i).isSancion()) + "    |");
+            System.out.println("    " + String.valueOf(estudiantes.get(i).getSancion()) + "    |");
 
         }
         System.out.println("");
@@ -481,6 +483,11 @@ public class TestAlmacen {
         //fin de mostrar estudiantes
         Laboratorista.estudiantes.addAll(estudiantes);
         Inventario.equipos.addAll(equipos);
+        Administrador.laboratoristas.addAll(laboratoristas); 
+        new ListaEquipos2().mostrarDatos();
+        new ListaEquipos().observarDatos();
+        new ListaEstudiantes().mostrarEstudiante();
+        new ListaLaboratorista().mostrarLaboratorista();
         while (x == 0) {
             VentanaInicio vI = new VentanaInicio();
             vI.setVisible(true);
@@ -544,10 +551,10 @@ public class TestAlmacen {
 
                                 //aqui se escriben los laboratoristas en el txt
                                 int cantidadLaboratoristas = (int) (numeroLineas / 4);
-                                equipos.get(cantidadLaboratoristas + 1).setEquipo(laboratoristax.getNombre());
-                                equipos.get(cantidadLaboratoristas + 1).setMarca(laboratoristax.getApellido());
-                                equipos.get(cantidadLaboratoristas + 1).setCodigo(laboratoristax.getDocumento());
-                                equipos.get(cantidadLaboratoristas + 1).setCodigo(laboratoristax.getClave());
+                                laboratoristas.get(cantidadLaboratoristas + 1).setNombre(laboratoristax.getNombre());
+                                laboratoristas.get(cantidadLaboratoristas + 1).setApellido(laboratoristax.getApellido());
+                                laboratoristas.get(cantidadLaboratoristas + 1).setDocumento(laboratoristax.getDocumento());
+                                laboratoristas.get(cantidadLaboratoristas + 1).setClave(laboratoristax.getClave());
 
                                 BufferedWriter bw1 = null;
                                 FileWriter fw1 = null;
@@ -616,7 +623,7 @@ public class TestAlmacen {
                                 String carreraE = leer.nextLine();
                                 System.out.println("\nSemestre: ");
                                 String semestreE = leer.nextLine();
-                                Estudiante estudiantex = new Estudiante(nombreE, apellidoE, documentoE, claveE, carreraE, semestreE, false);
+                                Estudiante estudiantex = new Estudiante(nombreE, apellidoE, documentoE, claveE, carreraE, semestreE, "No tiene sancion");
                                 Administrador.crearEstudiante(estudiantes, estudiantex);
                                 estudiantes.add(estudiantex);
 
@@ -628,7 +635,7 @@ public class TestAlmacen {
                                 estudiantes.get(cantidadEstudiantes + 1).setClave(estudiantex.getClave());
                                 estudiantes.get(cantidadEstudiantes + 1).setCarrera(estudiantex.getCarrera());
                                 estudiantes.get(cantidadEstudiantes + 1).setCarrera(estudiantex.getSemestre());
-                                estudiantes.get(cantidadEstudiantes + 1).setSancion(estudiantex.isSancion());
+                                estudiantes.get(cantidadEstudiantes + 1).setSancion(estudiantex.getSancion());
                                 BufferedWriter bw2 = null;
                                 FileWriter fw2 = null;
 
@@ -655,7 +662,7 @@ public class TestAlmacen {
                                     bw2.newLine();
                                     bw2.write(estudiantex.getSemestre());
                                     bw2.newLine();
-                                    bw2.write(String.valueOf(estudiantex.isSancion()));
+                                    bw2.write(String.valueOf(estudiantex.getSancion()));
                                     bw2.newLine();
                                     System.out.println("información agregada!");
                                 } catch (IOException e) {

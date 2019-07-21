@@ -1,35 +1,42 @@
-Marcela
+Dora
 Bernal
 1010
 3333
-Ing. mecanica
+Ing. Mecanica
 9
-false
+X
 Pedro
 Fernandez
 1110
 9999
 Ing. Civil
 10
-false
+X
 Andres
 Ochoa
 1099
 1120
 Ing. Sistemas
 11
-false
+X
 Pedro
 Mendieta
 1010
 2002
-Ing. industrial
+Ing. Industrial
 8
-false
+X
 Steven
 Casas
 2222
 3141
 Ing. Mecanica
 9
-false
+X
+Juan
+Botero
+1848
+Juanse
+Ing. Civil
+9
+X

@@ -52,10 +52,11 @@ public class VentanaInicio extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(460, 460));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Buho.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/unnamed.png"))); // NOI18N
 
         btnA.setBackground(new java.awt.Color(255, 0, 0));
         btnA.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnA.setForeground(new java.awt.Color(255, 255, 255));
         btnA.setText("Administrador");
         btnA.setPreferredSize(new java.awt.Dimension(120, 35));
         btnA.addActionListener(new java.awt.event.ActionListener() {
@@ -66,6 +67,7 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         btnE.setBackground(new java.awt.Color(255, 0, 0));
         btnE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnE.setForeground(new java.awt.Color(255, 255, 255));
         btnE.setText("Estudiante");
         btnE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,6 +77,7 @@ public class VentanaInicio extends javax.swing.JFrame {
 
         btnL.setBackground(new java.awt.Color(255, 0, 0));
         btnL.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnL.setForeground(new java.awt.Color(255, 255, 255));
         btnL.setText("Laboratorista");
         btnL.setPreferredSize(new java.awt.Dimension(120, 35));
         btnL.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +86,8 @@ public class VentanaInicio extends javax.swing.JFrame {
             }
         });
 
-        btnSalir.setBackground(new java.awt.Color(153, 255, 255));
+        btnSalir.setBackground(new java.awt.Color(204, 255, 255));
+        btnSalir.setForeground(new java.awt.Color(204, 255, 255));
         btnSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/Salir.png"))); // NOI18N
         btnSalir.setAlignmentY(0.0F);
         btnSalir.setBorder(null);

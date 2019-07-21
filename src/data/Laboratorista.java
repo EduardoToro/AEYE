@@ -117,7 +117,7 @@ public class Laboratorista extends Persona {
         estudiantes.get(cantidadEstudiantes + 1).setClave(estudiantex.getClave());
         estudiantes.get(cantidadEstudiantes + 1).setCarrera(estudiantex.getCarrera());
         estudiantes.get(cantidadEstudiantes + 1).setCarrera(estudiantex.getSemestre());
-        estudiantes.get(cantidadEstudiantes + 1).setSancion(estudiantex.isSancion());
+        estudiantes.get(cantidadEstudiantes + 1).setSancion(estudiantex.getSancion());
         BufferedWriter bw2 = null;
         FileWriter fw2 = null;
 
@@ -144,7 +144,7 @@ public class Laboratorista extends Persona {
             bw2.newLine();
             bw2.write(estudiantex.getSemestre());
             bw2.newLine();
-            bw2.write(String.valueOf(estudiantex.isSancion()));
+            bw2.write(String.valueOf(estudiantex.getSancion()));
             bw2.newLine();
             System.out.println("información agregada!");
         } catch (IOException e) {

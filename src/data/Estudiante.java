@@ -7,7 +7,7 @@ public class Estudiante extends Persona{
     public static ArrayList<Equipo> listaEquipos= new ArrayList<>(); 
     private String carrera;
     private String semestre; 
-    private boolean sancion;  
+    private String sancion;  
     
     
      public static Equipo prestarEquipos(Equipo equipox){
@@ -35,7 +35,7 @@ public class Estudiante extends Persona{
 		return equipox;
     }
     
-    public Estudiante(String nombre, String apellido, String documento, String clave,String carrera, String semestre, boolean sancion) {
+    public Estudiante(String nombre, String apellido, String documento, String clave,String carrera, String semestre, String sancion) {
         super(nombre, apellido, documento, clave);
         this.carrera = carrera;
         this.semestre = semestre;
@@ -65,11 +65,11 @@ public class Estudiante extends Persona{
         this.semestre = semestre;
     }
 
-    public boolean isSancion() {
+    public String getSancion() {
         return sancion;
     }
 
-    public void setSancion(boolean sancion) {
+    public void setSancion(String sancion) {
         this.sancion = sancion;
     }
   

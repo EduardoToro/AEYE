@@ -9,33 +9,31 @@ import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
 public class ListaEquipos extends javax.swing.JFrame {
+
     DefaultTableModel modelo;
-    Equipo equipo1= new Equipo("Multimetro", "Flux", "1010","Bueno", "Disponible");
-    String buscarTexto; 
+    String buscarTexto;
     
-    private void mostrarEquipos(String buscar){
-            Inventario.equipos.add(equipo1);
-            String[] titulos= {"Equipo","Marca","Codigo","Estado", "Disponibilidad"};
+    public void observarDatos(){
+            String[] titulos= {"EQUIPO","MARCA","CÓDIGO","ESTADO","DISPONIBILIDAD"};
             String[] registro= new String[5]; 
-            modelo= new DefaultTableModel(null, titulos);
-                for(Equipo equipo: Inventario.equipos){ 
-                if(equipo.getEquipo().contains(buscar)){
-                registro[0]= equipo.getEquipo(); 
-                registro[1]= equipo.getMarca(); 
-                registro[2]= equipo.getCodigo(); 
-                registro[3]= equipo.getEstado();
-                registro[4]= equipo.getDisposicion();
-                modelo.addRow(registro);
-                }
+            modelo= new DefaultTableModel(null, titulos); 
+                for(Equipo ft: Inventario.equipos){      
+                
+                registro[0]= ft.getEquipo(); 
+                registro[1]= ft.getMarca(); 
+                registro[2]= ft.getCodigo(); 
+                registro[3]= ft.getEstado();  
+                registro[4]= ft.getDisposicion(); 
+                modelo.addRow(registro);    
             }
-            this.tblDatosEquipos1.setModel(modelo);            
+            this.tblDatosEquipos1.setModel(modelo);  
         }
     /**
      * Creates new form ListaEquipos
      */
     public ListaEquipos() {
         initComponents();
-        mostrarEquipos(""); 
+        observarDatos(); 
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("../imagen/Buho.png")).getImage());
@@ -66,21 +64,22 @@ public class ListaEquipos extends javax.swing.JFrame {
 
         tblDatosEquipos1.setBackground(new java.awt.Color(255, 0, 0));
         tblDatosEquipos1.setFont(new java.awt.Font("Trebuchet MS", 0, 16)); // NOI18N
+        tblDatosEquipos1.setForeground(new java.awt.Color(255, 255, 255));
         tblDatosEquipos1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
+        tblDatosEquipos1.setGridColor(new java.awt.Color(255, 0, 51));
         jScrollPane1.setViewportView(tblDatosEquipos1);
 
-        txtBuscar.setBackground(new java.awt.Color(204, 204, 204));
+        txtBuscar.setBackground(new java.awt.Color(153, 153, 153));
         txtBuscar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        txtBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        txtBuscar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtBuscar.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(153, 153, 0)));
 
         btnBuscar.setBackground(new java.awt.Color(255, 0, 0));
@@ -97,6 +96,7 @@ public class ListaEquipos extends javax.swing.JFrame {
 
         btnRegresar.setBackground(new java.awt.Color(255, 0, 0));
         btnRegresar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegresar.setText("Regresar");
         btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,12 +162,11 @@ public class ListaEquipos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        buscarTexto= txtBuscar.getText(); 
-        mostrarEquipos(buscarTexto);
+        
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
-        MenuLaboratorista ml= new MenuLaboratorista(); 
+        MenuAdministrador ml= new MenuAdministrador(); 
         ml.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnRegresarActionPerformed

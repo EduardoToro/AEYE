@@ -68,13 +68,4 @@ Samsung
 014
 Bueno
 Disponible
-Celular
-Samsung
-114
-Bueno
-Disponible
-Cargador
-Asus
-015
-Bueno
-Disponible
+
