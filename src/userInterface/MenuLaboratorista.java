@@ -67,11 +67,21 @@ public class MenuLaboratorista extends javax.swing.JFrame {
         btnEE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnEE.setForeground(new java.awt.Color(255, 255, 255));
         btnEE.setText("Editar Equipo");
+        btnEE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEEActionPerformed(evt);
+            }
+        });
 
         btnElE.setBackground(new java.awt.Color(255, 0, 0));
         btnElE.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
         btnElE.setForeground(new java.awt.Color(255, 255, 255));
         btnElE.setText("Eliminar Equipo");
+        btnElE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnElEActionPerformed(evt);
+            }
+        });
 
         btnRegresar.setBackground(new java.awt.Color(255, 0, 0));
         btnRegresar.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
@@ -160,6 +170,18 @@ public class MenuLaboratorista extends javax.swing.JFrame {
         m.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnREActionPerformed
+
+    private void btnElEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElEActionPerformed
+        EliminarEquipo ee= new EliminarEquipo(); 
+        ee.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnElEActionPerformed
+
+    private void btnEEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEEActionPerformed
+        ListaEquipoEdicion eD= new ListaEquipoEdicion(); 
+        eD.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnEEActionPerformed
 
     /**
      * @param args the command line arguments

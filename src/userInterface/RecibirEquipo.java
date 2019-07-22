@@ -291,7 +291,7 @@ public class RecibirEquipo extends javax.swing.JFrame {
     }//GEN-LAST:event_tblDatosEquiposMouseClicked
 
     private void btnSancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSancionActionPerformed
-       aplicarSancion();
+       //aplicarSancion();
     }//GEN-LAST:event_btnSancionActionPerformed
 
     /**

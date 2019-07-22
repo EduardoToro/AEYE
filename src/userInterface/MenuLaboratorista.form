@@ -158,6 +158,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Editar Equipo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEEActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnElE">
           <Properties>
@@ -172,6 +175,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Eliminar Equipo"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnElEActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnRegresar">
           <Properties>
