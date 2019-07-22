@@ -11,6 +11,7 @@ import data.Estudiante;
 import data.Inventario;
 import data.Laboratorista;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -76,6 +77,7 @@ public class ListaEstudiantes1 extends javax.swing.JFrame {
         btnRegresar = new javax.swing.JButton();
         txtIndicador = new javax.swing.JTextField();
         btnEditar1 = new javax.swing.JButton();
+        btnPregunta = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Almacén De Equipos Eléctricos Y Electrónicos");
@@ -131,6 +133,7 @@ public class ListaEstudiantes1 extends javax.swing.JFrame {
             }
         });
 
+        txtIndicador.setBackground(new java.awt.Color(102, 102, 102));
         txtIndicador.setFont(new java.awt.Font("Trebuchet MS", 0, 18)); // NOI18N
 
         btnEditar1.setBackground(new java.awt.Color(255, 0, 0));
@@ -144,6 +147,14 @@ public class ListaEstudiantes1 extends javax.swing.JFrame {
             }
         });
 
+        btnPregunta.setBackground(new java.awt.Color(255, 0, 0));
+        btnPregunta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagen/signo-de-interrogacion.png"))); // NOI18N
+        btnPregunta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPreguntaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -152,8 +163,10 @@ public class ListaEstudiantes1 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtIndicador, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnPregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtIndicador, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -180,11 +193,12 @@ public class ListaEstudiantes1 extends javax.swing.JFrame {
                     .addComponent(txtBuscar, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addGap(21, 21, 21)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegresar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtIndicador)
-                    .addComponent(btnEditar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtIndicador, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPregunta, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -235,11 +249,16 @@ public class ListaEstudiantes1 extends javax.swing.JFrame {
 
     private void btnEditar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditar1ActionPerformed
         // TODO add your handling code here:
-        EditarEstu mA= new EditarEstu(); 
+        EditarEstudiante mA= new EditarEstudiante(); 
         mA.setVisible(true);
         dispose(); 
         
     }//GEN-LAST:event_btnEditar1ActionPerformed
+
+    private void btnPreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreguntaActionPerformed
+      JOptionPane.showMessageDialog(this, "Selecione la fila del estudiante que desea editar\no digite el numero de documento en el recuadro"
+             ,"Ayuda",JOptionPane.INFORMATION_MESSAGE );
+    }//GEN-LAST:event_btnPreguntaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -280,6 +299,7 @@ public class ListaEstudiantes1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnEditar1;
+    private javax.swing.JButton btnPregunta;
     private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

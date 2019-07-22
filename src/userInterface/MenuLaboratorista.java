@@ -156,8 +156,7 @@ public class MenuLaboratorista extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLEActionPerformed
 
     private void btnREActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnREActionPerformed
-        // TODO add your handling code here:
-        ListaEquipos4 m = new ListaEquipos4 ();
+        RecibirEquipo m = new RecibirEquipo ();
         m.setVisible(true);
         dispose();
     }//GEN-LAST:event_btnREActionPerformed
